@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>菜鸡滴滴</title>
   <icon>http://tanging.top/icon.png</icon>
-  
+  <subtitle>冲冲冲</subtitle>
   <link href="http://tanging.top/atom.xml" rel="self"/>
   
   <link href="http://tanging.top/"/>
