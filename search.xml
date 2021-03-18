@@ -5,8 +5,8 @@
     <url>/2021/03/16/acm/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
 <h2 id="一、题目描述"><a href="#一、题目描述" class="headerlink" title="一、题目描述"></a>一、题目描述</h2><p><a href="http://118.190.20.162/view.page?gpid=T3">题目链接</a></p>
-<p><img src="https://img.imgdb.cn/item/6051a375524f85ce29909a1b.png" alt="题目描述" title="描述"><br><span id="more"></span></p>
-<p><img src="https://img.imgdb.cn/item/6051a375524f85ce29909a1f.png" alt="题目描述"></p>
+<p><img src="https://gitee.com/qztanging/images/raw/master/img/acm_1.png" alt="题目描述" title="描述"><br><span id="more"></span></p>
+<p><img src="https://gitee.com/qztanging/images/raw/master/img/acm_2.png" alt="题目描述"></p>
 <hr>
 <h2 id="二、分析"><a href="#二、分析" class="headerlink" title="二、分析"></a>二、分析</h2><ul>
 <li>首先看数据范围：1&lt;= n &lt;= 1000 &amp;&amp; 1&lt;= hi &lt;= 10000 ,需要时间复杂度小于等于 O(n<sup>2</sup>) </li>
@@ -28,7 +28,7 @@
     <url>/2021/03/17/acm2-1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
 <h2 id="一、-题目描述"><a href="#一、-题目描述" class="headerlink" title="一、 题目描述"></a>一、 题目描述</h2><p><a href="http://118.190.20.162/view.page?gpid=T2">题目链接</a></p>
-<p><img src="https://img.imgdb.cn/item/6051c841524f85ce29a74341.jpg" alt="描述"><br><span id="more"></span></p>
+<p><img src="https://gitee.com/qztanging/images/raw/master/img/a.jpg" alt="描述"><br><span id="more"></span></p>
 <h2 id="二、分析"><a href="#二、分析" class="headerlink" title="二、分析"></a>二、分析</h2><ul>
 <li><p>题目中有三个要求，可以将0和1看作第一类，2和3看作第一类，然后就是排列组合问题。</p>
 </li>
