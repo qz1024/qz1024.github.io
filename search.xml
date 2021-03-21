@@ -24,6 +24,151 @@
       </tags>
   </entry>
   <entry>
+    <title>行列式概念</title>
+    <url>/2021/03/21/post/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
+<h2 id="一、二三阶行列式"><a href="#一、二三阶行列式" class="headerlink" title="一、二三阶行列式"></a>一、二三阶行列式</h2><h3 id="1-二阶行列式定义"><a href="#1-二阶行列式定义" class="headerlink" title="1. 二阶行列式定义"></a>1. 二阶行列式定义</h3><script type="math/tex; mode=display">
+\left|
+\begin{array}
+{ccc}
+a&&b\\
+c&&d
+\end{array}
+\right|
+=ad-bc</script><p>同时从左上到右下称为<strong>主对角线</strong>，左下到右上称为<strong>副对角线</strong>。</p>
+<span id="more"></span>
+<h3 id="2-代入一元二次方程组"><a href="#2-代入一元二次方程组" class="headerlink" title="2. 代入一元二次方程组"></a>2. 代入一元二次方程组</h3><p>对于一元二次方程组：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+a_1x+b_1y=c_1\\
+a_2x+b_2y=c_2
+\end{cases}</script><p>通过加减消元，我们可以得到：</p>
+<script type="math/tex; mode=display">
+(a_1b_2-a_2b_1)x=c_1b_2-c_2b_1\\
+(a_2b_1-a_1b_2)y=c_1a_2-c_2a_1</script><p>如果系数行列式</p>
+<script type="math/tex; mode=display">
+\left|
+\begin{array}
+{ccc}
+a_1&&b_1\\
+a_2&&b_2
+\end{array}
+\right|
+=a_1b_2-a_2b_1\neq0</script><p>则方程组有唯一解，即：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+x=
+\frac
+{\left|
+\begin{array}
+{ccc}
+c_1&&b_1\\
+c_2&&b_2
+\end{array}
+\right|}
+{\left|
+\begin{array}
+{ccc}
+a_1&&b_1\\
+a_2&&b_2
+\end{array}
+\right|}\\
+y=
+\frac
+{\left|
+\begin{array}
+{ccc}
+a_1&&c_1\\
+a_2&&c_2
+\end{array}
+\right|}
+{\left|
+\begin{array}
+{ccc}
+a_1&&b_1\\
+a_2&&b_2
+\end{array}
+\right|}
+\end{cases}</script><p>例：解下列方程组：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+3x+2y=5\\
+5x-7y=29
+\end{cases}</script><blockquote>
+<p>解：由于系数行列式</p>
+<script type="math/tex; mode=display">
+\left|
+\begin{array}
+{ccc}
+3&&2\\5&&-7
+\end{array}
+\right|
+=-21-10=-31\neq0</script><p>所以方程组有唯一解</p>
+<p>所以：</p>
+<script type="math/tex; mode=display">
+x=
+\frac
+{\left|
+\begin{array}
+{ccc}
+5&&2\\29&&-7
+\end{array}
+\right|}
+{-31}=3,
+y=
+\frac
+{\left|
+\begin{array}
+{ccc}
+3&&5\\5&&29
+\end{array}
+\right|}
+{-31}=-2</script></blockquote>
+<h3 id="3-三阶行列式"><a href="#3-三阶行列式" class="headerlink" title="3. 三阶行列式"></a>3. 三阶行列式</h3><script type="math/tex; mode=display">
+\left|
+\begin{array}
+{ccc}
+a_{11}&&a_{12}&&a_{13}\\
+a_{21}&&a_{22}&&a_{23}\\
+a_{31}&&a_{32}&&a_{33}
+\end{array}
+\right|=\\a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}+a_{21}+a_{32}-\\a_{13}a_{22}a_{31}+a_{12}a_{21}a_{33}+a_{11}+a_{
+23}+a_{32}</script><font color=red>不同行不同列元素乘积的代数和</font>
+
+
+
+<hr>
+<h2 id="二、排列、逆序、逆序数"><a href="#二、排列、逆序、逆序数" class="headerlink" title="二、排列、逆序、逆序数"></a>二、排列、逆序、逆序数</h2><h3 id="1-排列"><a href="#1-排列" class="headerlink" title="1. 排列"></a>1. 排列</h3><blockquote>
+<p>排列：由1,2,···,n组成的有序数组称为一个 <strong>n</strong> 阶排列。通常用 $j_1,j_2,j_3,···,j_n$表示 <strong>n</strong>阶排列。</p>
+<p>自然排列：从1到n从小到大顺序排列成为自然排列。</p>
+</blockquote>
+<p>例： 2    4     1    3    ：4阶排列</p>
+<p>​        1    3    5    4    2    ：5阶排列</p>
+<h3 id="2-逆序与逆序数"><a href="#2-逆序与逆序数" class="headerlink" title="2. 逆序与逆序数"></a>2. 逆序与逆序数</h3><blockquote>
+<p>逆序：在一个排列中，如果一个大的数排在一个小的数前面，就称这两个数构成一个逆序。</p>
+<p>逆序数：一个排列中逆序的总数为这个排列的逆序数。用$\tau(j_1,j_2,···,j_n)$表示相关排列的逆序数。</p>
+<p>偶排列：如果一个排列的逆序数为偶数，则称这个排列为偶排列</p>
+<p>奇排列：如果一个排列的逆序数为奇数，则称这个排列为奇排列</p>
+</blockquote>
+<p>例：$\tau(1\,3\,2)=0+1=1$</p>
+<p>​        $\tau(2\,4\,3\,1)=1+2+1=4$</p>
+<h3 id="3-定理"><a href="#3-定理" class="headerlink" title="3.定理"></a>3.定理</h3><ul>
+<li>对换改变排列的奇偶性</li>
+<li>任意一个$n$阶排列可经过一系列兑换变成自然排列</li>
+<li>在所有的$n$阶排列中，奇偶排列各占一半</li>
+</ul>
+<hr>
+<h2 id="三、n阶行列式概念"><a href="#三、n阶行列式概念" class="headerlink" title="三、n阶行列式概念"></a>三、n阶行列式概念</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h3><p><img src="https://i.loli.net/2021/03/21/rpPKtdU9Tsq1vRk.png" alt="定义"></p>
+<p>完全展开式有$n!$项。</p>
+]]></content>
+      <categories>
+        <category>线代</category>
+      </categories>
+      <tags>
+        <tag>线代</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>有趣的数</title>
     <url>/2021/03/17/acm2-1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>

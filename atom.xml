@@ -6,7 +6,7 @@
   <link href="http://qz1024.github.io/atom.xml" rel="self"/>
   
   <link href="http://qz1024.github.io/"/>
-  <updated>2021-03-18T08:13:46.818Z</updated>
+  <updated>2021-03-21T10:37:09.357Z</updated>
   <id>http://qz1024.github.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>行列式概念</title>
+    <link href="http://qz1024.github.io/2021/03/21/post/"/>
+    <id>http://qz1024.github.io/2021/03/21/post/</id>
+    <published>2021-03-21T08:25:27.000Z</published>
+    <updated>2021-03-21T10:37:09.357Z</updated>
+    
+    
+    <summary type="html">&lt;hr&gt;
+&lt;h2 id=&quot;一、二三阶行列式&quot;&gt;&lt;a href=&quot;#一、二三阶行列式&quot; class=&quot;headerlink&quot; title=&quot;一、二三阶行列式&quot;&gt;&lt;/a&gt;一、二三阶行列式&lt;/h2&gt;&lt;h3 id=&quot;1-二阶行列式定义&quot;&gt;&lt;a href=&quot;#1-二阶行列式定义&quot; class=&quot;headerlink&quot; title=&quot;1. 二阶行列式定义&quot;&gt;&lt;/a&gt;1. 二阶行列式定义&lt;/h3&gt;&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\left|
+\begin{array}
+{ccc}
+a&amp;&amp;b\\
+c&amp;&amp;d
+\end{array}
+\right|
+=ad-bc&lt;/script&gt;&lt;p&gt;同时从左上到右下称为&lt;strong&gt;主对角线&lt;/strong&gt;，左下到右上称为&lt;strong&gt;副对角线&lt;/strong&gt;。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="线代" scheme="http://qz1024.github.io/categories/%E7%BA%BF%E4%BB%A3/"/>
+    
+    
+    <category term="线代" scheme="http://qz1024.github.io/tags/%E7%BA%BF%E4%BB%A3/"/>
+    
+  </entry>
+  
+  <entry>
     <title>有趣的数</title>
     <link href="http://qz1024.github.io/2021/03/17/acm2-1/"/>
     <id>http://qz1024.github.io/2021/03/17/acm2-1/</id>
     <published>2021-03-17T09:10:40.000Z</published>
-    <updated>2021-03-18T08:13:46.818Z</updated>
+    <updated>2021-03-18T08:45:01.074Z</updated>
     
     
     <summary type="html">&lt;hr&gt;
