@@ -6,7 +6,7 @@
   <link href="http://qz1024.github.io/atom.xml" rel="self"/>
   
   <link href="http://qz1024.github.io/"/>
-  <updated>2021-03-21T11:14:50.214Z</updated>
+  <updated>2021-03-22T13:34:34.103Z</updated>
   <id>http://qz1024.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>行列式性质</title>
+    <link href="http://qz1024.github.io/2021/03/22/xd/"/>
+    <id>http://qz1024.github.io/2021/03/22/xd/</id>
+    <published>2021-03-22T11:07:33.000Z</published>
+    <updated>2021-03-22T13:34:34.103Z</updated>
+    
+    
+    <summary type="html">&lt;hr&gt;
+&lt;h2 id=&quot;一、上三角行列式与下三角行列式&quot;&gt;&lt;a href=&quot;#一、上三角行列式与下三角行列式&quot; class=&quot;headerlink&quot; title=&quot;一、上三角行列式与下三角行列式&quot;&gt;&lt;/a&gt;一、上三角行列式与下三角行列式&lt;/h2&gt;&lt;h3 id=&quot;1-上三角行列式&quot;&gt;&lt;a href=&quot;#1-上三角行列式&quot; class=&quot;headerlink&quot; title=&quot;1. 上三角行列式&quot;&gt;&lt;/a&gt;1. 上三角行列式&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;定义：主对角线以下全部为0的行列式称为上三角行列式。&lt;/li&gt;
+&lt;li&gt;上三角行列式的值为主对角线的乘积。&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="线代" scheme="http://qz1024.github.io/categories/%E7%BA%BF%E4%BB%A3/"/>
+    
+    
+    <category term="线代" scheme="http://qz1024.github.io/tags/%E7%BA%BF%E4%BB%A3/"/>
+    
+  </entry>
+  
+  <entry>
     <title>行列式概念</title>
     <link href="http://qz1024.github.io/2021/03/21/post/"/>
     <id>http://qz1024.github.io/2021/03/21/post/</id>
     <published>2021-03-21T08:25:27.000Z</published>
-    <updated>2021-03-21T11:14:50.214Z</updated>
+    <updated>2021-03-21T11:15:38.682Z</updated>
     
     
     <summary type="html">&lt;hr&gt;
