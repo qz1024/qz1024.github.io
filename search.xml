@@ -203,6 +203,81 @@ C_{n-1}^{k}</script></li>
       </tags>
   </entry>
   <entry>
+    <title>行列式展开式</title>
+    <url>/2021/03/23/xd3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
+<h2 id="一、代数余子式"><a href="#一、代数余子式" class="headerlink" title="一、代数余子式"></a>一、代数余子式</h2><span id="more"></span>
+<p>在$n$阶行列式中划去$a_{ij}$所在的第$i$行、第$j$列的元素，由剩下的元素按照原来位置排法构成的一个$n-1$阶的行列式，称其为$a_{ij}$的余子式，记为$M_{ij}$；称$(-1)^{i+j}M_{ij}$为$a_{ij}$的代数余子式，记为$A_{ij}$，即$A_{ij}=(-1)^{i+j}M_{ij}$</p>
+<ul>
+<li><strong>余子式</strong> ：划去一行一列之后的$n-1$阶行列式，称为$a_{ij}$的余子式，记为$M_{ij}$</li>
+<li><strong>代数余子式</strong> :在余子式前乘以$(-1)^{i+j}$，记为$A_{ij}$</li>
+</ul>
+<h2 id="二、行列式按行按列展开"><a href="#二、行列式按行按列展开" class="headerlink" title="二、行列式按行按列展开"></a>二、行列式按行按列展开</h2><p><img src="https://i.loli.net/2021/03/23/72MOfFQ4KDwGHTp.png" alt="image-20210323155606062"></p>
+<p><img src="https://i.loli.net/2021/03/23/WHfT9vk7lyhzmCi.png" alt="image-20210323160123620"></p>
+<h2 id="三、范德蒙行列式"><a href="#三、范德蒙行列式" class="headerlink" title="三、范德蒙行列式"></a>三、范德蒙行列式</h2><p>链接：<a href="https://baike.baidu.com/item/%E8%8C%83%E5%BE%B7%E8%92%99%E8%A1%8C%E5%88%97%E5%BC%8F/6081288?fr=aladdin">范德蒙行列式定义</a></p>
+<script type="math/tex; mode=display">
+\left|
+\begin{array}
+{ccc}
+1&&1&&1&&…&&1\\
+a_1&&a_2&&a_3&&…&&a_n\\
+a^2_{1}&&a^2_{2}&&a^2_{3}&&…&&a^2_{n}\\
+\vdots&&\vdots&&\vdots&&\vdots&&\vdots\\
+a_1^{n-1}&&a_2^{n-1}&&a_3^{n-1}&&…&&a_n^{n-1}
+\end{array}
+\right|
+=\prod_{1\le j<i\le n}^{n}(a_i-a_j)</script><p>即：大坐标数减小坐标数的连乘器。</p>
+<p>例.  求解下列行列式:</p>
+<script type="math/tex; mode=display">
+\left|
+\begin{array}
+{ccc}
+1&&2&&3&&4\\
+1&&2^2&&3^2&&4^2\\
+1&&2^3&&3^3&&4^3\\
+9&&8&&7&&6
+\end{array}
+\right|</script><p>解：将第一行加到第四行上,提取公因式，再构造范德蒙行列式</p>
+<script type="math/tex; mode=display">
+D=
+\left|
+\begin{array}
+{ccc}
+1&&2&&3&&4\\
+1&&2^2&&3^2&&4^2\\
+1&&2^3&&3^3&&4^3\\
+10&&10&&10&&10
+\end{array}
+\right|
+=10
+\left|
+\begin{array}
+{ccc}
+1&&2&&3&&4\\
+1&&2^2&&3^2&&4^2\\
+1&&2^3&&3^3&&4^3\\
+1&&1&&1&&1
+\end{array}
+\right|\\
+=-10
+\left|
+\begin{array}
+{ccc}
+1&&1&&1&&1\\
+1&&2&&3&&4\\
+1&&2^2&&3^2&&4^2\\
+1&&2^3&&3^3&&4^3
+\end{array}
+\right|</script><p>所以$D=-10(2-1)(3-1)(4-1)(3-2)(4-2)(4-3)=-120$</p>
+]]></content>
+      <categories>
+        <category>线代</category>
+      </categories>
+      <tags>
+        <tag>线代</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>行列式性质</title>
     <url>/2021/03/22/xd/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
