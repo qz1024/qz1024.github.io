@@ -6,7 +6,7 @@
   <link href="http://qz1024.github.io/atom.xml" rel="self"/>
   
   <link href="http://qz1024.github.io/"/>
-  <updated>2021-03-23T08:57:48.366Z</updated>
+  <updated>2021-03-24T08:28:22.712Z</updated>
   <id>http://qz1024.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>矩阵</title>
+    <link href="http://qz1024.github.io/2021/03/23/xd2/"/>
+    <id>http://qz1024.github.io/2021/03/23/xd2/</id>
+    <published>2021-03-23T15:15:37.000Z</published>
+    <updated>2021-03-24T08:28:22.712Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="线代" scheme="http://qz1024.github.io/categories/%E7%BA%BF%E4%BB%A3/"/>
+    
+    
+    <category term="线代" scheme="http://qz1024.github.io/tags/%E7%BA%BF%E4%BB%A3/"/>
+    
+    <category term="矩阵" scheme="http://qz1024.github.io/tags/%E7%9F%A9%E9%98%B5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>行列式展开式</title>
     <link href="http://qz1024.github.io/2021/03/23/xd3/"/>
     <id>http://qz1024.github.io/2021/03/23/xd3/</id>
     <published>2021-03-23T07:30:58.000Z</published>
-    <updated>2021-03-23T08:57:48.366Z</updated>
+    <updated>2021-03-23T15:14:38.403Z</updated>
     
     
     <summary type="html">&lt;hr&gt;
