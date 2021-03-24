@@ -24,161 +24,6 @@
       </tags>
   </entry>
   <entry>
-    <title>有趣的数</title>
-    <url>/2021/03/17/acm2-1/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
-<h2 id="一、-题目描述"><a href="#一、-题目描述" class="headerlink" title="一、 题目描述"></a>一、 题目描述</h2><p><a href="http://118.190.20.162/view.page?gpid=T2">题目链接</a></p>
-<p><img src="https://gitee.com/qztanging/images/raw/master/img/a.jpg" alt="描述"><br><span id="more"></span></p>
-<h2 id="二、分析"><a href="#二、分析" class="headerlink" title="二、分析"></a>二、分析</h2><ul>
-<li><p>题目中有三个要求，可以将0和1看作第一类，2和3看作第一类，然后就是排列组合问题。</p>
-</li>
-<li><p>首先设第一类数个数为 <strong>k</strong> ，则第二类数个数为 <strong>n - k</strong>。<strong>k</strong>的范围为：[2 ，n - 2] </p>
-</li>
-<li><p>从k个位置中选取第一类的位置，因为最高为不能为0，所以第一类的可能位置有 :</p>
-<script type="math/tex; mode=display">
-C_{n-1}^{k}</script></li>
-<li><p>之后具体分第一类中0和1的位置，因为 <strong>0</strong> 在<strong>1</strong>的前面且必须有一个，所以第一类里面的情况有  <strong>k-1</strong> 种：01111…11(一个0和k-1个1)  和00111…111(两个0和k-2个1)  到 0000…0001  (k-1个0和共1个1)。</p>
-</li>
-<li><p>同理第二类数字中的位置情况： <strong>n - k - 1</strong>种。</p>
-</li>
-<li><p><strong>综上所述</strong>，方案数为：</p>
-<script type="math/tex; mode=display">
-\sum_{k=2}^{n-2}  C_{n-1}^{k} \times (k-1) \times (n-k-1)</script></li>
-</ul>
-<hr>
-<h2 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1010</span>,mod = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> n,re,t,c[N][N];</span><br><span class="line"><span class="comment">//组合数数组的初始化</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;= n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j&lt;= i;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!j)  c[i][j] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                c[i][j] = (c[i<span class="number">-1</span>][j<span class="number">-1</span>] + c[i<span class="number">-1</span>][j])%mod;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	init();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i &lt;= n<span class="number">-2</span> ; i++)&#123;</span><br><span class="line">        <span class="comment">//因为可能超范围，所以转换为long,相乘的中间也要模一下</span></span><br><span class="line">        re =( re +  (ll)c[n<span class="number">-1</span>][i]*(i<span class="number">-1</span>)%mod  *(n<span class="number">-1</span>-i)  )%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;re&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>acm</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>枚举</tag>
-        <tag>组合数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>行列式性质</title>
-    <url>/2021/03/22/xd/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
-<h2 id="一、上三角行列式与下三角行列式"><a href="#一、上三角行列式与下三角行列式" class="headerlink" title="一、上三角行列式与下三角行列式"></a>一、上三角行列式与下三角行列式</h2><h3 id="1-上三角行列式"><a href="#1-上三角行列式" class="headerlink" title="1. 上三角行列式"></a>1. 上三角行列式</h3><ul>
-<li>定义：主对角线以下全部为0的行列式称为上三角行列式。</li>
-<li>上三角行列式的值为主对角线的乘积。</li>
-</ul>
-<span id="more"></span>
-<ul>
-<li><strong>例：(以四阶为例)</strong></li>
-</ul>
-<script type="math/tex; mode=display">
-\left|
-\begin{array}
-{ccc}
-a_{11}&&a_{12}&&a_{13}&&a_{14}\\
-0&&a_{22}&&a_{23}&&a_{24}\\
-0&&0&&a_{33}&&a_{34}\\
-0&&0&&0&&a_{44}
-\end{array}
-\right|
-=a_{11}a_{22}a_{33}a_{44}</script><h3 id="2-下三角行列式"><a href="#2-下三角行列式" class="headerlink" title="2. 下三角行列式"></a>2. 下三角行列式</h3><ul>
-<li>定义：副对角线以下全部为0的行列式称为而下三角行列式。</li>
-<li>下三角行列式的值为副对角线的乘积乘以 $(-1)^{\frac{1}{2}n(n-1)}$。</li>
-<li><strong>例：(以四阶为例)</strong></li>
-</ul>
-<script type="math/tex; mode=display">
-\left|
-\begin{array}
-{ccc}
-a_{11}&&a_{12}&&a_{13}&&a_{14}\\
-a_{21}&&a_{22}&&a_{23}&&0\\
-a_{31}&&a_{32}&&0&&0\\
-a_{41}&&0&&0&&0
-\end{array}
-\right|
-=(-1)^{\frac{1}{2}n(n-1)}a_{14}a_{23}a_{32}a_{41}</script><h3 id="3-tips"><a href="#3-tips" class="headerlink" title="3. tips"></a>3. <font color=red>tips</font></h3><p>二阶与三阶行列式的对角线法到四阶行列式失灵，计算四阶行列式必须用展开公式法(根据定义展开)。</p>
-<h2 id="二、行列式的性质"><a href="#二、行列式的性质" class="headerlink" title="二、行列式的性质"></a>二、行列式的性质</h2><h3 id="1-行列互换，行列式的值不变"><a href="#1-行列互换，行列式的值不变" class="headerlink" title="1. 行列互换，行列式的值不变"></a>1. 行列互换，行列式的值不变</h3><p><img src="https://i.loli.net/2021/03/22/MZdV1QK9Y2v5XNR.png" alt="image-20210322195357646"></p>
-<h3 id="2-对换行列式中两行的位置，行列式变号"><a href="#2-对换行列式中两行的位置，行列式变号" class="headerlink" title="2. 对换行列式中两行的位置，行列式变号"></a>2. 对换行列式中两行的位置，行列式变号</h3><p><img src="https://i.loli.net/2021/03/22/IY1Q3cJbLCU2A4f.png" alt="image-20210322201715848"></p>
-<p><strong>推论：行列式两行<font color=red>成比例</font>，则行列式为$0$。</strong></p>
-<h3 id="3-某行有公因数-k-可以将-k-提出"><a href="#3-某行有公因数-k-可以将-k-提出" class="headerlink" title="3. 某行有公因数$k$可以将$k$提出"></a>3. 某行有公因数$k$可以将$k$提出</h3><p><img src="https://i.loli.net/2021/03/22/YZFsOKl3kGxRgpN.png" alt="image-20210322201250223"></p>
-<p> <strong>推论：若某一行元素全为$0$，则可以将$0$提出来，所以行列式的值为$0$。</strong></p>
-<h3 id="4-行列式某行或某列是两个元素之和，则可以将行列式拆成两个行列式之和"><a href="#4-行列式某行或某列是两个元素之和，则可以将行列式拆成两个行列式之和" class="headerlink" title="4.行列式某行或某列是两个元素之和，则可以将行列式拆成两个行列式之和"></a>4.行列式某行或某列是两个元素之和，则可以将行列式拆成两个行列式之和</h3><p><img src="https://i.loli.net/2021/03/22/ZWnUfk3aLObA47N.png" alt="image-20210322202322696"></p>
-<h3 id="5-某行的-k-倍加到另一行，行列式的值不变"><a href="#5-某行的-k-倍加到另一行，行列式的值不变" class="headerlink" title="5.某行的$k$倍加到另一行，行列式的值不变"></a>5.某行的$k$倍加到另一行，行列式的值不变</h3><p><img src="https://i.loli.net/2021/03/22/K5hwYbCirdVeSIU.png" alt="image-20210322202747554"></p>
-<h2 id="三、例题"><a href="#三、例题" class="headerlink" title="三、例题"></a>三、例题</h2><p>已知$306,527,918$都能被$17$整除，不计算行列式的值，证明：</p>
-<script type="math/tex; mode=display">
-D=
-\left|
-\begin{array}
-{ccc}
-6&&7&&8\\
-0&&2&&1\\
-3&&5&&9
-\end{array}
-\right|,能被17整除。</script><p>证明：因为行列式是不同行不同列元素乘积的代数和，所以$D$必是一个整数。</p>
-<p>将第三行的$100$倍，第二行的$10$倍都加到第一行，行列式的值不变，得到：</p>
-<script type="math/tex; mode=display">
-D=
-\left|
-\begin{array}
-{ccc}
-306&&527&&918\\
-0&&2&&1\\
-3&&5&&9
-\end{array}
-\right|=17k</script><p>故$D$能被$17$整除。</p>
-]]></content>
-      <categories>
-        <category>线代</category>
-      </categories>
-      <tags>
-        <tag>线代</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>矩阵</title>
-    <url>/2021/03/23/xd2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
-<h2 id="一、矩阵的定义及运算"><a href="#一、矩阵的定义及运算" class="headerlink" title="一、矩阵的定义及运算"></a>一、矩阵的定义及运算</h2><p><img src="https://i.loli.net/2021/03/23/kf6ghYJGdUZbWKD.png" alt="image-20210323231848819"></p>
-<p>注意：<font color =red>矩阵$A$是一个表格，而行列式$|A|$是一个数。</font></p>
-<h2 id="二、常见的矩阵"><a href="#二、常见的矩阵" class="headerlink" title="二、常见的矩阵"></a>二、常见的矩阵</h2><ul>
-<li>单位矩阵：主对角线元素为$1$，其余元素为$0$的矩阵为单位矩阵，记为$E$</li>
-<li>对角矩阵：非对角元素都是$0$的矩阵(即$\forall i \neq j$恒有$a_{ij}=0$)成为对角矩阵</li>
-<li>上(下)三角矩阵：当$i&gt;j(i&lt;j)$时，有$a_{ij}=0$称为上(下)三角矩阵</li>
-<li>对称矩阵：满足$A^{T}=A$ ，即 $a_{ij}=a_{ji}$的矩阵称为对称矩阵</li>
-<li>反对称矩阵：满足$A^{T}=-A$,即$a_{ij}=-a_{ji},a_{ii}=0$的矩阵称为反对称矩阵</li>
-</ul>
-<h2 id="三、矩阵的运算"><a href="#三、矩阵的运算" class="headerlink" title="三、矩阵的运算"></a>三、矩阵的运算</h2><ul>
-<li>加法</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/24/LHJ9V7nswEkCNR3.png" alt="image-20210324120024689"></p>
-<ul>
-<li><p>数乘</p>
-<p><img src="https://i.loli.net/2021/03/24/VFrgKeEcixw7N5U.png" alt="image-20210324120039681"></p>
-</li>
-<li><p>乘法</p>
-<p><img src="https://i.loli.net/2021/03/24/OrlcXfxzmD6WiH8.png" alt="image-20210324120132691"></p>
-</li>
-<li><p>转置</p>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/24/AVOg6UBdm1Mk5Cj.png" alt="image-20210324120155384"></p>
-<ul>
-<li><font color =red>tips</font> <ol>
-<li>$AB \neq BA$</li>
-<li>由$AB=0 \nRightarrow A=0$或$B=0$</li>
-<li>由$AB=AC$且$A \neq 0 \nRightarrow B=C$</li>
-</ol>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/24/dIAJC9HxiyGuqV7.png" alt="image-20210324161522082"></p>
-]]></content>
-      <categories>
-        <category>线代</category>
-      </categories>
-      <tags>
-        <tag>线代</tag>
-        <tag>矩阵</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>行列式概念</title>
     <url>/2021/03/21/post/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
@@ -321,6 +166,162 @@ a_{31}&&a_{32}&&a_{33}
       </categories>
       <tags>
         <tag>线代</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有趣的数</title>
+    <url>/2021/03/17/acm2-1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
+<h2 id="一、-题目描述"><a href="#一、-题目描述" class="headerlink" title="一、 题目描述"></a>一、 题目描述</h2><p><a href="http://118.190.20.162/view.page?gpid=T2">题目链接</a></p>
+<p><img src="https://gitee.com/qztanging/images/raw/master/img/a.jpg" alt="描述"><br><span id="more"></span></p>
+<h2 id="二、分析"><a href="#二、分析" class="headerlink" title="二、分析"></a>二、分析</h2><ul>
+<li><p>题目中有三个要求，可以将0和1看作第一类，2和3看作第一类，然后就是排列组合问题。</p>
+</li>
+<li><p>首先设第一类数个数为 <strong>k</strong> ，则第二类数个数为 <strong>n - k</strong>。<strong>k</strong>的范围为：[2 ，n - 2] </p>
+</li>
+<li><p>从k个位置中选取第一类的位置，因为最高为不能为0，所以第一类的可能位置有 :</p>
+<script type="math/tex; mode=display">
+C_{n-1}^{k}</script></li>
+<li><p>之后具体分第一类中0和1的位置，因为 <strong>0</strong> 在<strong>1</strong>的前面且必须有一个，所以第一类里面的情况有  <strong>k-1</strong> 种：01111…11(一个0和k-1个1)  和00111…111(两个0和k-2个1)  到 0000…0001  (k-1个0和共1个1)。</p>
+</li>
+<li><p>同理第二类数字中的位置情况： <strong>n - k - 1</strong>种。</p>
+</li>
+<li><p><strong>综上所述</strong>，方案数为：</p>
+<script type="math/tex; mode=display">
+\sum_{k=2}^{n-2}  C_{n-1}^{k} \times (k-1) \times (n-k-1)</script></li>
+</ul>
+<hr>
+<h2 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1010</span>,mod = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> n,re,t,c[N][N];</span><br><span class="line"><span class="comment">//组合数数组的初始化</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;= n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j&lt;= i;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!j)  c[i][j] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                c[i][j] = (c[i<span class="number">-1</span>][j<span class="number">-1</span>] + c[i<span class="number">-1</span>][j])%mod;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	init();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i &lt;= n<span class="number">-2</span> ; i++)&#123;</span><br><span class="line">        <span class="comment">//因为可能超范围，所以转换为long,相乘的中间也要模一下</span></span><br><span class="line">        re =( re +  (ll)c[n<span class="number">-1</span>][i]*(i<span class="number">-1</span>)%mod  *(n<span class="number">-1</span>-i)  )%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;re&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>acm</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>枚举</tag>
+        <tag>组合数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>行列式性质</title>
+    <url>/2021/03/22/xd/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
+<h2 id="一、上三角行列式与下三角行列式"><a href="#一、上三角行列式与下三角行列式" class="headerlink" title="一、上三角行列式与下三角行列式"></a>一、上三角行列式与下三角行列式</h2><h3 id="1-上三角行列式"><a href="#1-上三角行列式" class="headerlink" title="1. 上三角行列式"></a>1. 上三角行列式</h3><ul>
+<li>定义：主对角线以下全部为0的行列式称为上三角行列式。</li>
+<li>上三角行列式的值为主对角线的乘积。</li>
+</ul>
+<span id="more"></span>
+<ul>
+<li><strong>例：(以四阶为例)</strong></li>
+</ul>
+<script type="math/tex; mode=display">
+\left|
+\begin{array}
+{ccc}
+a_{11}&&a_{12}&&a_{13}&&a_{14}\\
+0&&a_{22}&&a_{23}&&a_{24}\\
+0&&0&&a_{33}&&a_{34}\\
+0&&0&&0&&a_{44}
+\end{array}
+\right|
+=a_{11}a_{22}a_{33}a_{44}</script><h3 id="2-下三角行列式"><a href="#2-下三角行列式" class="headerlink" title="2. 下三角行列式"></a>2. 下三角行列式</h3><ul>
+<li>定义：副对角线以下全部为0的行列式称为而下三角行列式。</li>
+<li>下三角行列式的值为副对角线的乘积乘以 $(-1)^{\frac{1}{2}n(n-1)}$。</li>
+<li><strong>例：(以四阶为例)</strong></li>
+</ul>
+<script type="math/tex; mode=display">
+\left|
+\begin{array}
+{ccc}
+a_{11}&&a_{12}&&a_{13}&&a_{14}\\
+a_{21}&&a_{22}&&a_{23}&&0\\
+a_{31}&&a_{32}&&0&&0\\
+a_{41}&&0&&0&&0
+\end{array}
+\right|
+=(-1)^{\frac{1}{2}n(n-1)}a_{14}a_{23}a_{32}a_{41}</script><h3 id="3-tips"><a href="#3-tips" class="headerlink" title="3. tips"></a>3. <font color=red>tips</font></h3><p>二阶与三阶行列式的对角线法到四阶行列式失灵，计算四阶行列式必须用展开公式法(根据定义展开)。</p>
+<h2 id="二、行列式的性质"><a href="#二、行列式的性质" class="headerlink" title="二、行列式的性质"></a>二、行列式的性质</h2><h3 id="1-行列互换，行列式的值不变"><a href="#1-行列互换，行列式的值不变" class="headerlink" title="1. 行列互换，行列式的值不变"></a>1. 行列互换，行列式的值不变</h3><p><img src="https://i.loli.net/2021/03/22/MZdV1QK9Y2v5XNR.png" alt="image-20210322195357646"></p>
+<h3 id="2-对换行列式中两行的位置，行列式变号"><a href="#2-对换行列式中两行的位置，行列式变号" class="headerlink" title="2. 对换行列式中两行的位置，行列式变号"></a>2. 对换行列式中两行的位置，行列式变号</h3><p><img src="https://i.loli.net/2021/03/22/IY1Q3cJbLCU2A4f.png" alt="image-20210322201715848"></p>
+<p><strong>推论：行列式两行<font color=red>成比例</font>，则行列式为$0$。</strong></p>
+<h3 id="3-某行有公因数-k-可以将-k-提出"><a href="#3-某行有公因数-k-可以将-k-提出" class="headerlink" title="3. 某行有公因数$k$可以将$k$提出"></a>3. 某行有公因数$k$可以将$k$提出</h3><p><img src="https://i.loli.net/2021/03/22/YZFsOKl3kGxRgpN.png" alt="image-20210322201250223"></p>
+<p> <strong>推论：若某一行元素全为$0$，则可以将$0$提出来，所以行列式的值为$0$。</strong></p>
+<h3 id="4-行列式某行或某列是两个元素之和，则可以将行列式拆成两个行列式之和"><a href="#4-行列式某行或某列是两个元素之和，则可以将行列式拆成两个行列式之和" class="headerlink" title="4.行列式某行或某列是两个元素之和，则可以将行列式拆成两个行列式之和"></a>4.行列式某行或某列是两个元素之和，则可以将行列式拆成两个行列式之和</h3><p><img src="https://i.loli.net/2021/03/22/ZWnUfk3aLObA47N.png" alt="image-20210322202322696"></p>
+<h3 id="5-某行的-k-倍加到另一行，行列式的值不变"><a href="#5-某行的-k-倍加到另一行，行列式的值不变" class="headerlink" title="5.某行的$k$倍加到另一行，行列式的值不变"></a>5.某行的$k$倍加到另一行，行列式的值不变</h3><p><img src="https://i.loli.net/2021/03/22/K5hwYbCirdVeSIU.png" alt="image-20210322202747554"></p>
+<h2 id="三、例题"><a href="#三、例题" class="headerlink" title="三、例题"></a>三、例题</h2><p>已知$306,527,918$都能被$17$整除，不计算行列式的值，证明：</p>
+<script type="math/tex; mode=display">
+D=
+\left|
+\begin{array}
+{ccc}
+6&&7&&8\\
+0&&2&&1\\
+3&&5&&9
+\end{array}
+\right|,能被17整除。</script><p>证明：因为行列式是不同行不同列元素乘积的代数和，所以$D$必是一个整数。</p>
+<p>将第三行的$100$倍，第二行的$10$倍都加到第一行，行列式的值不变，得到：</p>
+<script type="math/tex; mode=display">
+D=
+\left|
+\begin{array}
+{ccc}
+306&&527&&918\\
+0&&2&&1\\
+3&&5&&9
+\end{array}
+\right|=17k</script><p>故$D$能被$17$整除。</p>
+]]></content>
+      <categories>
+        <category>线代</category>
+      </categories>
+      <tags>
+        <tag>线代</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>矩阵</title>
+    <url>/2021/03/23/xd2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
+<h2 id="一、矩阵的定义及运算"><a href="#一、矩阵的定义及运算" class="headerlink" title="一、矩阵的定义及运算"></a>一、矩阵的定义及运算</h2><p><img src="https://i.loli.net/2021/03/23/kf6ghYJGdUZbWKD.png" alt="image-20210323231848819"></p>
+<p>注意：<font color =red>矩阵$A$是一个表格，而行列式$|A|$是一个数。</font></p>
+<span id="more"></span>
+<h2 id="二、常见的矩阵"><a href="#二、常见的矩阵" class="headerlink" title="二、常见的矩阵"></a>二、常见的矩阵</h2><ul>
+<li>单位矩阵：主对角线元素为$1$，其余元素为$0$的矩阵为单位矩阵，记为$E$</li>
+<li>对角矩阵：非对角元素都是$0$的矩阵(即$\forall i \neq j$恒有$a_{ij}=0$)成为对角矩阵</li>
+<li>上(下)三角矩阵：当$i&gt;j(i&lt;j)$时，有$a_{ij}=0$称为上(下)三角矩阵</li>
+<li>对称矩阵：满足$A^{T}=A$ ，即 $a_{ij}=a_{ji}$的矩阵称为对称矩阵</li>
+<li>反对称矩阵：满足$A^{T}=-A$,即$a_{ij}=-a_{ji},a_{ii}=0$的矩阵称为反对称矩阵</li>
+</ul>
+<h2 id="三、矩阵的运算"><a href="#三、矩阵的运算" class="headerlink" title="三、矩阵的运算"></a>三、矩阵的运算</h2><ul>
+<li>加法</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/24/LHJ9V7nswEkCNR3.png" alt="image-20210324120024689"></p>
+<ul>
+<li><p>数乘</p>
+<p><img src="https://i.loli.net/2021/03/24/VFrgKeEcixw7N5U.png" alt="image-20210324120039681"></p>
+</li>
+<li><p>乘法</p>
+<p><img src="https://i.loli.net/2021/03/24/OrlcXfxzmD6WiH8.png" alt="image-20210324120132691"></p>
+</li>
+<li><p>转置</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/24/AVOg6UBdm1Mk5Cj.png" alt="image-20210324120155384"></p>
+<ul>
+<li><font color =red>tips</font> <ol>
+<li>$AB \neq BA$</li>
+<li>由$AB=0 \nRightarrow A=0$或$B=0$</li>
+<li>由$AB=AC$且$A \neq 0 \nRightarrow B=C$</li>
+</ol>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/24/dIAJC9HxiyGuqV7.png" alt="image-20210324161522082"></p>
+]]></content>
+      <categories>
+        <category>线代</category>
+      </categories>
+      <tags>
+        <tag>线代</tag>
+        <tag>矩阵</tag>
       </tags>
   </entry>
   <entry>
