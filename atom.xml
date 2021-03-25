@@ -6,7 +6,7 @@
   <link href="http://qz1024.github.io/atom.xml" rel="self"/>
   
   <link href="http://qz1024.github.io/"/>
-  <updated>2021-03-24T15:38:35.103Z</updated>
+  <updated>2021-03-24T15:31:52.154Z</updated>
   <id>http://qz1024.github.io/</id>
   
   <author>
@@ -15,29 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>可逆矩阵</title>
-    <link href="http://qz1024.github.io/2021/03/24/xd4/"/>
-    <id>http://qz1024.github.io/2021/03/24/xd4/</id>
-    <published>2021-03-24T13:48:33.000Z</published>
-    <updated>2021-03-24T15:38:35.103Z</updated>
-    
-    
-    <summary type="html">&lt;hr&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;一、方阵的行列式&quot;&gt;&lt;a href=&quot;#一、方阵的行列式&quot; class=&quot;headerlink&quot; title=&quot;一、方阵的行列式&quot;&gt;&lt;/a&gt;一、方阵的行列式&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;设$A=[a_{ij}]$为$n$阶矩阵。其所有元素所构成的行列式称为方阵$A$的行列式，记为$|A|$&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="线代" scheme="http://qz1024.github.io/categories/%E7%BA%BF%E4%BB%A3/"/>
-    
-    
-    <category term="线代" scheme="http://qz1024.github.io/tags/%E7%BA%BF%E4%BB%A3/"/>
-    
-  </entry>
   
   <entry>
     <title>矩阵</title>

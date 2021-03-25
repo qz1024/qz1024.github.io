@@ -58,81 +58,6 @@ C_{n-1}^{k}</script></li>
       </tags>
   </entry>
   <entry>
-    <title>行列式性质</title>
-    <url>/2021/03/22/xd/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
-<h2 id="一、上三角行列式与下三角行列式"><a href="#一、上三角行列式与下三角行列式" class="headerlink" title="一、上三角行列式与下三角行列式"></a>一、上三角行列式与下三角行列式</h2><h3 id="1-上三角行列式"><a href="#1-上三角行列式" class="headerlink" title="1. 上三角行列式"></a>1. 上三角行列式</h3><ul>
-<li>定义：主对角线以下全部为0的行列式称为上三角行列式。</li>
-<li>上三角行列式的值为主对角线的乘积。</li>
-</ul>
-<span id="more"></span>
-<ul>
-<li><strong>例：(以四阶为例)</strong></li>
-</ul>
-<script type="math/tex; mode=display">
-\left|
-\begin{array}
-{ccc}
-a_{11}&&a_{12}&&a_{13}&&a_{14}\\
-0&&a_{22}&&a_{23}&&a_{24}\\
-0&&0&&a_{33}&&a_{34}\\
-0&&0&&0&&a_{44}
-\end{array}
-\right|
-=a_{11}a_{22}a_{33}a_{44}</script><h3 id="2-下三角行列式"><a href="#2-下三角行列式" class="headerlink" title="2. 下三角行列式"></a>2. 下三角行列式</h3><ul>
-<li>定义：副对角线以下全部为0的行列式称为而下三角行列式。</li>
-<li>下三角行列式的值为副对角线的乘积乘以 $(-1)^{\frac{1}{2}n(n-1)}$。</li>
-<li><strong>例：(以四阶为例)</strong></li>
-</ul>
-<script type="math/tex; mode=display">
-\left|
-\begin{array}
-{ccc}
-a_{11}&&a_{12}&&a_{13}&&a_{14}\\
-a_{21}&&a_{22}&&a_{23}&&0\\
-a_{31}&&a_{32}&&0&&0\\
-a_{41}&&0&&0&&0
-\end{array}
-\right|
-=(-1)^{\frac{1}{2}n(n-1)}a_{14}a_{23}a_{32}a_{41}</script><h3 id="3-tips"><a href="#3-tips" class="headerlink" title="3. tips"></a>3. <font color=red>tips</font></h3><p>二阶与三阶行列式的对角线法到四阶行列式失灵，计算四阶行列式必须用展开公式法(根据定义展开)。</p>
-<h2 id="二、行列式的性质"><a href="#二、行列式的性质" class="headerlink" title="二、行列式的性质"></a>二、行列式的性质</h2><h3 id="1-行列互换，行列式的值不变"><a href="#1-行列互换，行列式的值不变" class="headerlink" title="1. 行列互换，行列式的值不变"></a>1. 行列互换，行列式的值不变</h3><p><img src="https://i.loli.net/2021/03/22/MZdV1QK9Y2v5XNR.png" alt="image-20210322195357646"></p>
-<h3 id="2-对换行列式中两行的位置，行列式变号"><a href="#2-对换行列式中两行的位置，行列式变号" class="headerlink" title="2. 对换行列式中两行的位置，行列式变号"></a>2. 对换行列式中两行的位置，行列式变号</h3><p><img src="https://i.loli.net/2021/03/22/IY1Q3cJbLCU2A4f.png" alt="image-20210322201715848"></p>
-<p><strong>推论：行列式两行<font color=red>成比例</font>，则行列式为$0$。</strong></p>
-<h3 id="3-某行有公因数-k-可以将-k-提出"><a href="#3-某行有公因数-k-可以将-k-提出" class="headerlink" title="3. 某行有公因数$k$可以将$k$提出"></a>3. 某行有公因数$k$可以将$k$提出</h3><p><img src="https://i.loli.net/2021/03/22/YZFsOKl3kGxRgpN.png" alt="image-20210322201250223"></p>
-<p> <strong>推论：若某一行元素全为$0$，则可以将$0$提出来，所以行列式的值为$0$。</strong></p>
-<h3 id="4-行列式某行或某列是两个元素之和，则可以将行列式拆成两个行列式之和"><a href="#4-行列式某行或某列是两个元素之和，则可以将行列式拆成两个行列式之和" class="headerlink" title="4.行列式某行或某列是两个元素之和，则可以将行列式拆成两个行列式之和"></a>4.行列式某行或某列是两个元素之和，则可以将行列式拆成两个行列式之和</h3><p><img src="https://i.loli.net/2021/03/22/ZWnUfk3aLObA47N.png" alt="image-20210322202322696"></p>
-<h3 id="5-某行的-k-倍加到另一行，行列式的值不变"><a href="#5-某行的-k-倍加到另一行，行列式的值不变" class="headerlink" title="5.某行的$k$倍加到另一行，行列式的值不变"></a>5.某行的$k$倍加到另一行，行列式的值不变</h3><p><img src="https://i.loli.net/2021/03/22/K5hwYbCirdVeSIU.png" alt="image-20210322202747554"></p>
-<h2 id="三、例题"><a href="#三、例题" class="headerlink" title="三、例题"></a>三、例题</h2><p>已知$306,527,918$都能被$17$整除，不计算行列式的值，证明：</p>
-<script type="math/tex; mode=display">
-D=
-\left|
-\begin{array}
-{ccc}
-6&&7&&8\\
-0&&2&&1\\
-3&&5&&9
-\end{array}
-\right|,能被17整除。</script><p>证明：因为行列式是不同行不同列元素乘积的代数和，所以$D$必是一个整数。</p>
-<p>将第三行的$100$倍，第二行的$10$倍都加到第一行，行列式的值不变，得到：</p>
-<script type="math/tex; mode=display">
-D=
-\left|
-\begin{array}
-{ccc}
-306&&527&&918\\
-0&&2&&1\\
-3&&5&&9
-\end{array}
-\right|=17k</script><p>故$D$能被$17$整除。</p>
-]]></content>
-      <categories>
-        <category>线代</category>
-      </categories>
-      <tags>
-        <tag>线代</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>行列式概念</title>
     <url>/2021/03/21/post/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
@@ -278,72 +203,78 @@ a_{31}&&a_{32}&&a_{33}
       </tags>
   </entry>
   <entry>
-    <title>矩阵</title>
-    <url>/2021/03/23/xd2/</url>
+    <title>行列式性质</title>
+    <url>/2021/03/22/xd/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
-<h2 id="一、矩阵的定义及运算"><a href="#一、矩阵的定义及运算" class="headerlink" title="一、矩阵的定义及运算"></a>一、矩阵的定义及运算</h2><p><img src="https://i.loli.net/2021/03/23/kf6ghYJGdUZbWKD.png" alt="image-20210323231848819"></p>
-<p>注意：<font color =red>矩阵$A$是一个表格，而行列式$|A|$是一个数。</font></p>
+<h2 id="一、上三角行列式与下三角行列式"><a href="#一、上三角行列式与下三角行列式" class="headerlink" title="一、上三角行列式与下三角行列式"></a>一、上三角行列式与下三角行列式</h2><h3 id="1-上三角行列式"><a href="#1-上三角行列式" class="headerlink" title="1. 上三角行列式"></a>1. 上三角行列式</h3><ul>
+<li>定义：主对角线以下全部为0的行列式称为上三角行列式。</li>
+<li>上三角行列式的值为主对角线的乘积。</li>
+</ul>
 <span id="more"></span>
-<h2 id="二、常见的矩阵"><a href="#二、常见的矩阵" class="headerlink" title="二、常见的矩阵"></a>二、常见的矩阵</h2><ul>
-<li>单位矩阵：主对角线元素为$1$，其余元素为$0$的矩阵为单位矩阵，记为$E$</li>
-<li>对角矩阵：非对角元素都是$0$的矩阵(即$\forall i \neq j$恒有$a_{ij}=0$)成为对角矩阵</li>
-<li>上(下)三角矩阵：当$i&gt;j(i&lt;j)$时，有$a_{ij}=0$称为上(下)三角矩阵</li>
-<li>对称矩阵：满足$A^{T}=A$ ，即 $a_{ij}=a_{ji}$的矩阵称为对称矩阵</li>
-<li>反对称矩阵：满足$A^{T}=-A$,即$a_{ij}=-a_{ji},a_{ii}=0$的矩阵称为反对称矩阵</li>
-</ul>
-<h2 id="三、矩阵的运算"><a href="#三、矩阵的运算" class="headerlink" title="三、矩阵的运算"></a>三、矩阵的运算</h2><ul>
-<li>加法</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/24/LHJ9V7nswEkCNR3.png" alt="image-20210324120024689"></p>
 <ul>
-<li><p>数乘</p>
-<p><img src="https://i.loli.net/2021/03/24/VFrgKeEcixw7N5U.png" alt="image-20210324120039681"></p>
-</li>
-<li><p>乘法</p>
-<p><img src="https://i.loli.net/2021/03/24/OrlcXfxzmD6WiH8.png" alt="image-20210324120132691"></p>
-</li>
-<li><p>转置</p>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/24/AVOg6UBdm1Mk5Cj.png" alt="image-20210324120155384"></p>
-<ul>
-<li><font color =red>tips</font> <ol>
-<li>$AB \neq BA$</li>
-<li>由$AB=0 \nRightarrow A=0$或$B=0$</li>
-<li>由$AB=AC$且$A \neq 0 \nRightarrow B=C$</li>
-</ol>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/24/dIAJC9HxiyGuqV7.png" alt="image-20210324161522082"></p>
-<hr>
-<p>对角矩阵运算：</p>
-<ul>
-<li>相乘</li>
+<li><strong>例：(以四阶为例)</strong></li>
 </ul>
 <script type="math/tex; mode=display">
-\begin{bmatrix} a_1 & 0 &0 \\ 0 & a_2&0\\0&0&a_3 \end{bmatrix}
-\begin{bmatrix} b_1 & 0 &0 \\ 0 & b_2&0\\0&0&b_3 \end{bmatrix}=
-\begin{bmatrix} a_1b_1 & 0 &0 \\ 0 & a_2b_2&0\\0&0&a_3b_3 \end{bmatrix}</script><ul>
-<li>n次方</li>
+\left|
+\begin{array}
+{ccc}
+a_{11}&&a_{12}&&a_{13}&&a_{14}\\
+0&&a_{22}&&a_{23}&&a_{24}\\
+0&&0&&a_{33}&&a_{34}\\
+0&&0&&0&&a_{44}
+\end{array}
+\right|
+=a_{11}a_{22}a_{33}a_{44}</script><h3 id="2-下三角行列式"><a href="#2-下三角行列式" class="headerlink" title="2. 下三角行列式"></a>2. 下三角行列式</h3><ul>
+<li>定义：副对角线以下全部为0的行列式称为而下三角行列式。</li>
+<li>下三角行列式的值为副对角线的乘积乘以 $(-1)^{\frac{1}{2}n(n-1)}$。</li>
+<li><strong>例：(以四阶为例)</strong></li>
 </ul>
 <script type="math/tex; mode=display">
-\begin{bmatrix} a_1 & 0 &0 \\ 0 & a_2&0\\0&0&a_3 \end{bmatrix}^{n}=
-\begin{bmatrix} a_1^{n} & 0 &0 \\ 0 & a_2^{n}&0\\0&0&a_3^{n} \end{bmatrix}</script><ul>
-<li>逆矩阵</li>
-</ul>
+\left|
+\begin{array}
+{ccc}
+a_{11}&&a_{12}&&a_{13}&&a_{14}\\
+a_{21}&&a_{22}&&a_{23}&&0\\
+a_{31}&&a_{32}&&0&&0\\
+a_{41}&&0&&0&&0
+\end{array}
+\right|
+=(-1)^{\frac{1}{2}n(n-1)}a_{14}a_{23}a_{32}a_{41}</script><h3 id="3-tips"><a href="#3-tips" class="headerlink" title="3. tips"></a>3. <font color=red>tips</font></h3><p>二阶与三阶行列式的对角线法到四阶行列式失灵，计算四阶行列式必须用展开公式法(根据定义展开)。</p>
+<h2 id="二、行列式的性质"><a href="#二、行列式的性质" class="headerlink" title="二、行列式的性质"></a>二、行列式的性质</h2><h3 id="1-行列互换，行列式的值不变"><a href="#1-行列互换，行列式的值不变" class="headerlink" title="1. 行列互换，行列式的值不变"></a>1. 行列互换，行列式的值不变</h3><p><img src="https://i.loli.net/2021/03/22/MZdV1QK9Y2v5XNR.png" alt="image-20210322195357646"></p>
+<h3 id="2-对换行列式中两行的位置，行列式变号"><a href="#2-对换行列式中两行的位置，行列式变号" class="headerlink" title="2. 对换行列式中两行的位置，行列式变号"></a>2. 对换行列式中两行的位置，行列式变号</h3><p><img src="https://i.loli.net/2021/03/22/IY1Q3cJbLCU2A4f.png" alt="image-20210322201715848"></p>
+<p><strong>推论：行列式两行<font color=red>成比例</font>，则行列式为$0$。</strong></p>
+<h3 id="3-某行有公因数-k-可以将-k-提出"><a href="#3-某行有公因数-k-可以将-k-提出" class="headerlink" title="3. 某行有公因数$k$可以将$k$提出"></a>3. 某行有公因数$k$可以将$k$提出</h3><p><img src="https://i.loli.net/2021/03/22/YZFsOKl3kGxRgpN.png" alt="image-20210322201250223"></p>
+<p> <strong>推论：若某一行元素全为$0$，则可以将$0$提出来，所以行列式的值为$0$。</strong></p>
+<h3 id="4-行列式某行或某列是两个元素之和，则可以将行列式拆成两个行列式之和"><a href="#4-行列式某行或某列是两个元素之和，则可以将行列式拆成两个行列式之和" class="headerlink" title="4.行列式某行或某列是两个元素之和，则可以将行列式拆成两个行列式之和"></a>4.行列式某行或某列是两个元素之和，则可以将行列式拆成两个行列式之和</h3><p><img src="https://i.loli.net/2021/03/22/ZWnUfk3aLObA47N.png" alt="image-20210322202322696"></p>
+<h3 id="5-某行的-k-倍加到另一行，行列式的值不变"><a href="#5-某行的-k-倍加到另一行，行列式的值不变" class="headerlink" title="5.某行的$k$倍加到另一行，行列式的值不变"></a>5.某行的$k$倍加到另一行，行列式的值不变</h3><p><img src="https://i.loli.net/2021/03/22/K5hwYbCirdVeSIU.png" alt="image-20210322202747554"></p>
+<h2 id="三、例题"><a href="#三、例题" class="headerlink" title="三、例题"></a>三、例题</h2><p>已知$306,527,918$都能被$17$整除，不计算行列式的值，证明：</p>
 <script type="math/tex; mode=display">
-\begin{bmatrix} a_1 & 0 &0 \\ 0 & a_2&0\\0&0&a_3 \end{bmatrix}
-\begin{bmatrix} \frac{1}{a_1} & 0 &0 \\ 0 & \frac{1}{a_2}&0\\0&0&\frac{1}{a_3} \end{bmatrix}=
-\begin{bmatrix} 1 & 0 &0 \\ 0 & 1&0\\0&0&1 \end{bmatrix}\\
-所以,
-\begin{bmatrix} a_1 & 0 &0 \\ 0 & a_2&0\\0&0&a_3 \end{bmatrix}^{-1}=
-\begin{bmatrix} \frac{1}{a_1} & 0 &0 \\ 0 & \frac{1}{a_2}&0\\0&0&\frac{1}{a_3} \end{bmatrix}</script>]]></content>
+D=
+\left|
+\begin{array}
+{ccc}
+6&&7&&8\\
+0&&2&&1\\
+3&&5&&9
+\end{array}
+\right|,能被17整除。</script><p>证明：因为行列式是不同行不同列元素乘积的代数和，所以$D$必是一个整数。</p>
+<p>将第三行的$100$倍，第二行的$10$倍都加到第一行，行列式的值不变，得到：</p>
+<script type="math/tex; mode=display">
+D=
+\left|
+\begin{array}
+{ccc}
+306&&527&&918\\
+0&&2&&1\\
+3&&5&&9
+\end{array}
+\right|=17k</script><p>故$D$能被$17$整除。</p>
+]]></content>
       <categories>
         <category>线代</category>
       </categories>
       <tags>
         <tag>线代</tag>
-        <tag>矩阵</tag>
       </tags>
   </entry>
   <entry>
@@ -424,58 +355,72 @@ D=
       </tags>
   </entry>
   <entry>
-    <title>可逆矩阵</title>
-    <url>/2021/03/24/xd4/</url>
+    <title>矩阵</title>
+    <url>/2021/03/23/xd2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
-<hr>
-<h2 id="一、方阵的行列式"><a href="#一、方阵的行列式" class="headerlink" title="一、方阵的行列式"></a>一、方阵的行列式</h2><blockquote>
-<p>设$A=[a_{ij}]$为$n$阶矩阵。其所有元素所构成的行列式称为方阵$A$的行列式，记为$|A|$</p>
-</blockquote>
+<h2 id="一、矩阵的定义及运算"><a href="#一、矩阵的定义及运算" class="headerlink" title="一、矩阵的定义及运算"></a>一、矩阵的定义及运算</h2><p><img src="https://i.loli.net/2021/03/23/kf6ghYJGdUZbWKD.png" alt="image-20210323231848819"></p>
+<p>注意：<font color =red>矩阵$A$是一个表格，而行列式$|A|$是一个数。</font></p>
 <span id="more"></span>
-<p>tips:</p>
-<ol>
-<li><p>只有方阵才有行列式$A$</p>
-</li>
-<li><p>$A=0$和$|A|=0$不要混</p>
-<p><img src="https://i.loli.net/2021/03/24/jtH5nJlC7orEdQv.png" alt="image-20210324215634667"></p>
-</li>
-</ol>
-<p>方阵行列式公式:</p>
-<ol>
-<li>$|A^T|=|A|$</li>
-<li>$|kA|=k^n|A|$  相当于每行都提出一个公因子k</li>
-<li>$|AB|=|A|·|B|$ 特别地 $|A^2| = |A|^2$</li>
-</ol>
-<hr>
-<h2 id="二、伴随矩阵"><a href="#二、伴随矩阵" class="headerlink" title="二、伴随矩阵"></a>二、伴随矩阵</h2><p><img src="https://i.loli.net/2021/03/24/92AhxGQozslTBMg.png" alt="image-20210324222507399"></p>
-<p><img src="https://i.loli.net/2021/03/24/dMLFBK12PryOR9X.png" alt="image-20210324222615805"></p>
-<p><font color =red>tips:二阶方阵的伴随矩阵：主对角线互换，副对角线变号</font></p>
-<script type="math/tex; mode=display">
-A=
-\begin{bmatrix} 1 & 2 \\ -1 & 3 \end{bmatrix}
-,则|A|=3-(-2)=5,
-A*=
-\begin{bmatrix} 3 & -2 \\ 1 & 1 \end{bmatrix}\\
-A^{-1}= \frac{1}{5}A*</script><hr>
-<h2 id="三、可逆矩阵"><a href="#三、可逆矩阵" class="headerlink" title="三、可逆矩阵"></a>三、可逆矩阵</h2><blockquote>
-<p>对于$n$阶矩阵A，如果存在n阶矩阵B，使得$AB=BA=E$,则称矩阵A是可逆的，称B为A的逆矩阵，记作$A^{-1}=B$</p>
-</blockquote>
-<p>定理：</p>
-<ul>
-<li>若A可逆，则A的逆矩阵唯一。</li>
-<li>A可逆$\Leftrightarrow |A| \neq 0$ </li>
-<li>设A和B为n阶矩阵且$AB=E$,则$BA=E$</li>
+<h2 id="二、常见的矩阵"><a href="#二、常见的矩阵" class="headerlink" title="二、常见的矩阵"></a>二、常见的矩阵</h2><ul>
+<li>单位矩阵：主对角线元素为$1$，其余元素为$0$的矩阵为单位矩阵，记为$E$</li>
+<li>对角矩阵：非对角元素都是$0$的矩阵(即$\forall i \neq j$恒有$a_{ij}=0$)成为对角矩阵</li>
+<li>上(下)三角矩阵：当$i&gt;j(i&lt;j)$时，有$a_{ij}=0$称为上(下)三角矩阵</li>
+<li>对称矩阵：满足$A^{T}=A$ ，即 $a_{ij}=a_{ji}$的矩阵称为对称矩阵</li>
+<li>反对称矩阵：满足$A^{T}=-A$,即$a_{ij}=-a_{ji},a_{ii}=0$的矩阵称为反对称矩阵</li>
 </ul>
-<p>逆矩阵的运算性质</p>
-<p><img src="https://i.loli.net/2021/03/24/KDzBQt21LH3sTES.png" alt="image-20210324224120395"></p>
+<h2 id="三、矩阵的运算"><a href="#三、矩阵的运算" class="headerlink" title="三、矩阵的运算"></a>三、矩阵的运算</h2><ul>
+<li>加法</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/24/LHJ9V7nswEkCNR3.png" alt="image-20210324120024689"></p>
+<ul>
+<li><p>数乘</p>
+<p><img src="https://i.loli.net/2021/03/24/VFrgKeEcixw7N5U.png" alt="image-20210324120039681"></p>
+</li>
+<li><p>乘法</p>
+<p><img src="https://i.loli.net/2021/03/24/OrlcXfxzmD6WiH8.png" alt="image-20210324120132691"></p>
+</li>
+<li><p>转置</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/24/AVOg6UBdm1Mk5Cj.png" alt="image-20210324120155384"></p>
+<ul>
+<li><font color =red>tips</font> <ol>
+<li>$AB \neq BA$</li>
+<li>由$AB=0 \nRightarrow A=0$或$B=0$</li>
+<li>由$AB=AC$且$A \neq 0 \nRightarrow B=C$</li>
+</ol>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/24/dIAJC9HxiyGuqV7.png" alt="image-20210324161522082"></p>
 <hr>
-<h2 id="四、求逆矩阵"><a href="#四、求逆矩阵" class="headerlink" title="四、求逆矩阵"></a>四、求逆矩阵</h2><p><img src="https://i.loli.net/2021/03/24/LfT2PEnUj6mrZHS.png" alt="image-20210324225302181"> </p>
-]]></content>
+<p>对角矩阵运算：</p>
+<ul>
+<li>相乘</li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{bmatrix} a_1 & 0 &0 \\ 0 & a_2&0\\0&0&a_3 \end{bmatrix}
+\begin{bmatrix} b_1 & 0 &0 \\ 0 & b_2&0\\0&0&b_3 \end{bmatrix}=
+\begin{bmatrix} a_1b_1 & 0 &0 \\ 0 & a_2b_2&0\\0&0&a_3b_3 \end{bmatrix}</script><ul>
+<li>n次方</li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{bmatrix} a_1 & 0 &0 \\ 0 & a_2&0\\0&0&a_3 \end{bmatrix}^{n}=
+\begin{bmatrix} a_1^{n} & 0 &0 \\ 0 & a_2^{n}&0\\0&0&a_3^{n} \end{bmatrix}</script><ul>
+<li>逆矩阵</li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{bmatrix} a_1 & 0 &0 \\ 0 & a_2&0\\0&0&a_3 \end{bmatrix}
+\begin{bmatrix} \frac{1}{a_1} & 0 &0 \\ 0 & \frac{1}{a_2}&0\\0&0&\frac{1}{a_3} \end{bmatrix}=
+\begin{bmatrix} 1 & 0 &0 \\ 0 & 1&0\\0&0&1 \end{bmatrix}\\
+所以,
+\begin{bmatrix} a_1 & 0 &0 \\ 0 & a_2&0\\0&0&a_3 \end{bmatrix}^{-1}=
+\begin{bmatrix} \frac{1}{a_1} & 0 &0 \\ 0 & \frac{1}{a_2}&0\\0&0&\frac{1}{a_3} \end{bmatrix}</script>]]></content>
       <categories>
         <category>线代</category>
       </categories>
       <tags>
         <tag>线代</tag>
+        <tag>矩阵</tag>
       </tags>
   </entry>
 </search>
