@@ -500,4 +500,100 @@ A^{-1}= \frac{1}{5}A*</script><hr>
         <tag>线代</tag>
       </tags>
   </entry>
+  <entry>
+    <title>矩阵的初等变换</title>
+    <url>/2021/03/26/xd5/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
+<h2 id="一、-矩阵初等变换"><a href="#一、-矩阵初等变换" class="headerlink" title="一、 矩阵初等变换"></a>一、 矩阵初等变换</h2><p>设A是$m \times n$矩阵，</p>
+<ol>
+<li>用某个非零常数k乘A的某行(列)的每个元素</li>
+<li>互换A的某两行(列)的位置</li>
+<li>将A的某行(列)的k倍加到另一行(列)</li>
+</ol>
+<p><strong>称为矩阵的三种初等行(列)变换，且分别称为初等倍乘、互换、倍加行(列)变换，统称为初等变换。</strong></p>
+<span id="more"></span>
+<p><strong>例子：</strong>解下列方程组：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+x_1+x_2+3x_3=1\\
+x_1-x_2-x_3=-3\\
+5x_1+x_2+7x_3=-3
+\end{cases}</script><p>解：对增广矩阵做初等行变换：</p>
+<script type="math/tex; mode=display">
+\overline{A}=
+\begin{bmatrix} 1 & 1&3&1 \\ 1&-1&-1&3 \\5&1&7&-3\end{bmatrix}=
+\begin{bmatrix} 1 & 1&3&1 \\ 0&-2&-4&2  \\0&-4&-8&-8\end{bmatrix}\\=
+\begin{bmatrix} 1 & 1&3&1 \\ 0&1&2&2 \\0
+&0&0&0\end{bmatrix}=
+\begin{bmatrix} 1 & 0&1&-1 \\ 0&1&2&2 \\0
+&0&0&0\end{bmatrix}</script><p>解方程组：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+x_1+x_3=-1\\
+x_2+2x_3=2
+\end{cases}</script><p>$x_3$为<strong>自由变量</strong></p>
+<p>设$x_3$为$t$，则解为$\begin{cases}x_1=-1-t\\x_2=2-2t\\x_3=t\end{cases}$或$\begin{bmatrix} x_1\\x_2\\x_3 \end{bmatrix}=\begin{bmatrix} -1\\2\\0 \end{bmatrix}+t\begin{bmatrix}{-1}\\{-2} \\1\end{bmatrix}$</p>
+<hr>
+<h2 id="二、初等矩阵"><a href="#二、初等矩阵" class="headerlink" title="二、初等矩阵"></a>二、初等矩阵</h2><p><strong>由单位矩阵经过一次初等变换得到的矩阵称为初等矩阵</strong>，分别为：</p>
+<ol>
+<li>倍乘初等矩阵</li>
+<li>互换初等矩阵</li>
+<li>倍加初等矩阵</li>
+</ol>
+<p><strong>性质1：初等矩阵$P$左乘矩阵$A$，其乘积$PA$就是矩阵$A$做一次与$P$相同的行变换。</strong></p>
+<p><strong>性质2：初等矩阵$P$右乘矩阵$A$，其乘积$AP$就是矩阵$A$做一次与$P$相同的列变换。</strong></p>
+<font color=red>tip:初等矩阵在左边，则矩阵做相同的行变换；初等矩阵在右边，则矩阵做相同的列变换。</font>
+
+<p><strong>例：</strong></p>
+<script type="math/tex; mode=display">
+\begin{bmatrix} 0&1&0\\1&0&0\\0&0&1 \end{bmatrix}
+\begin{bmatrix} 1&4&7\\2&5&8\\3&6&9 \end{bmatrix}=
+\begin{bmatrix} 2&5&8\\1&4&7\\3&6&9 \end{bmatrix}</script><p>初等矩阵在左，且为单位矩阵第一、二行交换位置所得，则两矩阵相乘的结果为该矩阵第一、二行交换。</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix} 1&4&7\\2&5&8\\3&6&9 \end{bmatrix}\begin{bmatrix} 1&0&0\\0&1&0\\0&0&2 \end{bmatrix}=
+\begin{bmatrix} 1&4&14\\2&5&16\\3&6&18 \end{bmatrix}</script><p>初等矩阵在右，且为单位矩阵第三列乘以$2$所得，则两矩阵相乘的结果为该矩阵第三列乘以$2$。</p>
+<p><strong>性质3： 倍加初等矩阵的逆矩阵为将倍数改为相反数的矩阵。</strong></p>
+<p>例： </p>
+<script type="math/tex; mode=display">
+\begin{bmatrix} 1&0&5\\0&1&0\\0&0&1 \end{bmatrix}^{-1}=
+\begin{bmatrix} 1&0&-5\\0&1&0\\0&0&1 \end{bmatrix}</script><p><strong>性质4： 互换初等矩阵的逆矩阵为本身</strong></p>
+<p>例：</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix} 1&0&0\\0&0&1\\0&1&0 \end{bmatrix}^{-1}=
+\begin{bmatrix}  1&0&0\\0&0&1\\0&1&0  \end{bmatrix}</script><p><strong>性质5： 倍乘初等矩阵的逆矩阵为将倍数改为倒数的矩阵</strong></p>
+<p>例：</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix} 1&0&0\\0&k&0\\0&0&1 \end{bmatrix}^{-1}=
+\begin{bmatrix}  1&0&0\\0&\frac{1}{k} &0\\0&0&1  \end{bmatrix}</script><hr>
+<h2 id="三、矩阵等价"><a href="#三、矩阵等价" class="headerlink" title="三、矩阵等价"></a>三、矩阵等价</h2><p>矩阵$A$经过有限次初等变换变成矩阵$B$，则称$A$与$B$等价，记成$A \cong B$,若$A \cong \begin{bmatrix} E_r &amp; 0\\0&amp;0\end{bmatrix}$,则称后者为$A$的等价标准形($A$的等价标准形是与$A$等价的所有矩阵中的最简矩阵)。</p>
+<p>矩阵等价满足：</p>
+<ol>
+<li>反身性：$A \cong A$</li>
+<li>对称性：若$A\cong B$,则$B\cong A$</li>
+<li>传递性：若$A\cong B,B\cong C$,则$A\cong C$</li>
+</ol>
+<hr>
+<h2 id="四、行阶梯矩阵"><a href="#四、行阶梯矩阵" class="headerlink" title="四、行阶梯矩阵"></a>四、行阶梯矩阵</h2><p>设$A为m\times n$矩阵，若满足：</p>
+<ol>
+<li><strong>如果矩阵中有零行(即这一行元素全是0)，则零行在矩阵的底部</strong></li>
+<li><strong>每个非零行的主元(即该行最左边的第一个非零元)，它们的列指标随着行指标的递增而严格增大</strong></li>
+</ol>
+<p>则称$A$为行阶梯矩阵。</p>
+<p><img src="https://i.loli.net/2021/03/26/RCmyWA7Ojr46DcH.png" alt="image-20210326151306345"></p>
+<hr>
+<h2 id="五、行最简矩阵"><a href="#五、行最简矩阵" class="headerlink" title="五、行最简矩阵"></a>五、行最简矩阵</h2><p>设$A为m\times n$矩阵，若满足：</p>
+<ol>
+<li>是行阶梯矩阵</li>
+<li>非零行的主元都是$1$,且主元所在列的其他元素都是$0$.</li>
+</ol>
+<p>则称其为行最简矩阵。</p>
+<p><img src="https://i.loli.net/2021/03/26/dC25L1SkPepXywr.png" alt="image-20210326152004706"></p>
+]]></content>
+      <categories>
+        <category>线代</category>
+      </categories>
+      <tags>
+        <tag>线代</tag>
+      </tags>
+  </entry>
 </search>

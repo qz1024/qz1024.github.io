@@ -6,7 +6,7 @@
   <link href="http://qz1024.github.io/atom.xml" rel="self"/>
   
   <link href="http://qz1024.github.io/"/>
-  <updated>2021-03-25T16:45:34.492Z</updated>
+  <updated>2021-03-26T07:29:09.906Z</updated>
   <id>http://qz1024.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>矩阵的初等变换</title>
+    <link href="http://qz1024.github.io/2021/03/26/xd5/"/>
+    <id>http://qz1024.github.io/2021/03/26/xd5/</id>
+    <published>2021-03-26T04:19:06.000Z</published>
+    <updated>2021-03-26T07:29:09.906Z</updated>
+    
+    
+    <summary type="html">&lt;hr&gt;
+&lt;h2 id=&quot;一、-矩阵初等变换&quot;&gt;&lt;a href=&quot;#一、-矩阵初等变换&quot; class=&quot;headerlink&quot; title=&quot;一、 矩阵初等变换&quot;&gt;&lt;/a&gt;一、 矩阵初等变换&lt;/h2&gt;&lt;p&gt;设A是$m \times n$矩阵，&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用某个非零常数k乘A的某行(列)的每个元素&lt;/li&gt;
+&lt;li&gt;互换A的某两行(列)的位置&lt;/li&gt;
+&lt;li&gt;将A的某行(列)的k倍加到另一行(列)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;称为矩阵的三种初等行(列)变换，且分别称为初等倍乘、互换、倍加行(列)变换，统称为初等变换。&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="线代" scheme="http://qz1024.github.io/categories/%E7%BA%BF%E4%BB%A3/"/>
+    
+    
+    <category term="线代" scheme="http://qz1024.github.io/tags/%E7%BA%BF%E4%BB%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>可逆矩阵</title>
