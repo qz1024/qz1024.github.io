@@ -83,7 +83,7 @@
 
 <meta name="description" content="一、 矩阵初等变换设A是$m \times n$矩阵，  用某个非零常数k乘A的某行(列)的每个元素 互换A的某两行(列)的位置 将A的某行(列)的k倍加到另一行(列)  称为矩阵的三种初等行(列)变换，且分别称为初等倍乘、互换、倍加行(列)变换，统称为初等变换。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="矩阵的初等变换">
+<meta property="og:title" content="矩阵的初等变换与初等矩阵">
 <meta property="og:url" content="http://qz1024.github.io/2021/03/26/xd5/index.html">
 <meta property="og:site_name" content="菜鸡滴滴">
 <meta property="og:description" content="一、 矩阵初等变换设A是$m \times n$矩阵，  用某个非零常数k乘A的某行(列)的每个元素 互换A的某两行(列)的位置 将A的某行(列)的k倍加到另一行(列)  称为矩阵的三种初等行(列)变换，且分别称为初等倍乘、互换、倍加行(列)变换，统称为初等变换。">
@@ -91,7 +91,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/03/26/RCmyWA7Ojr46DcH.png">
 <meta property="og:image" content="https://i.loli.net/2021/03/26/dC25L1SkPepXywr.png">
 <meta property="article:published_time" content="2021-03-26T04:19:06.000Z">
-<meta property="article:modified_time" content="2021-03-26T07:29:09.906Z">
+<meta property="article:modified_time" content="2021-03-28T07:28:56.534Z">
 <meta property="article:author" content="_qz">
 <meta property="article:tag" content="线代">
 <meta name="twitter:card" content="summary">
@@ -131,7 +131,7 @@
 
 
 
-  <title>矩阵的初等变换 | 菜鸡滴滴</title>
+  <title>矩阵的初等变换与初等矩阵 | 菜鸡滴滴</title>
   
 
 
@@ -349,7 +349,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">矩阵的初等变换</h1>
+          <h1 class="post-title" itemprop="name headline">矩阵的初等变换与初等矩阵</h1>
         
 
         <div class="post-meta">
@@ -377,8 +377,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-03-26T15:29:09+08:00">
-                2021-03-26
+              <time title="更新于" itemprop="dateModified" datetime="2021-03-28T15:28:56+08:00">
+                2021-03-28
               </time>
             
           </span>
@@ -442,7 +442,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  985 words
+                  1.3k words
                 </span>
               
 
@@ -458,7 +458,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4  min
+                  5  min
                 </span>
               
             </div>
@@ -564,7 +564,26 @@ x_2+2x_3=2
 </ol>
 <p>则称其为行最简矩阵。</p>
 <p><img src="https://i.loli.net/2021/03/26/dC25L1SkPepXywr.png" alt="image-20210326152004706"></p>
+<hr>
+<h2 id="六、初等行变换求逆矩阵"><a href="#六、初等行变换求逆矩阵" class="headerlink" title="六、初等行变换求逆矩阵"></a>六、初等行变换求逆矩阵</h2><p>设$A$为$n$阶矩阵:</p>
+<script type="math/tex; mode=display">
+(A|E) \rightarrow …(有限次初等行变换) \rightarrow (E|A^{-1})</script><ol>
+<li>在$x=A^{-1}B$结构中求$x$的值时：</li>
+</ol>
+<p>将$A$和$B$两个矩阵拼接在一起，再进行初等行变换，转化为$Ex$</p>
+<p>求得$x$</p>
+<ol>
+<li>在$x=BA^{-1}$结构中求$x$的值时(利用转置)：</li>
+</ol>
+<p>$x^{T}=(BA^{-1})^{T}=(A^T)^{-1}B^T$，将$A^T$和$B^T$两个矩阵拼接在一起，再进行初等行变换，转化为$Ex^T$，最后求得$x$</p>
+<hr>
+<h2 id="七、秩的概念"><a href="#七、秩的概念" class="headerlink" title="七、秩的概念"></a>七、秩的概念</h2><blockquote>
+<p>$K$阶行列式：在$m \times n$矩阵$A$中，任取$K$行与$K$列($K \le m,K \le n$)。位于这些行与列的交叉点上的$K^2$个元素，按其在原来和矩阵$A$的次序可构成一个$K$阶行列式，称其为矩阵$A$的一个$K$阶子式。</p>
+<p> 秩：若矩阵$A$中存在$r$阶子式不为$0$，$r+1$阶子式(如果存在)全为$0$，则对称矩阵$A$的秩为$r$，记为$r(A)=r$,零矩阵的秩规定为$0$</p>
+</blockquote>
+<font color =red>定理：经过初等变换矩阵的秩不变。</font>
 
+<font color=red>推论：若可逆矩阵$ P,Q$,使得$PAQ=B$,则$r(A)=r(B)$ 。即一个矩阵做有限次初等行变换和初等列变换之后，秩不变。  </font>
       
     </div>
     
@@ -618,6 +637,10 @@ x_2+2x_3=2
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/03/28/xd6/" rel="prev" title="用初等行变换求逆矩阵、秩的概念">
+                用初等行变换求逆矩阵、秩的概念 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -701,7 +724,7 @@ x_2+2x_3=2
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -786,7 +809,7 @@ x_2+2x_3=2
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81-%E7%9F%A9%E9%98%B5%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2"><span class="nav-text">一、 矩阵初等变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%88%9D%E7%AD%89%E7%9F%A9%E9%98%B5"><span class="nav-text">二、初等矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E7%9F%A9%E9%98%B5%E7%AD%89%E4%BB%B7"><span class="nav-text">三、矩阵等价</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E8%A1%8C%E9%98%B6%E6%A2%AF%E7%9F%A9%E9%98%B5"><span class="nav-text">四、行阶梯矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E8%A1%8C%E6%9C%80%E7%AE%80%E7%9F%A9%E9%98%B5"><span class="nav-text">五、行最简矩阵</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81-%E7%9F%A9%E9%98%B5%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2"><span class="nav-text">一、 矩阵初等变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%88%9D%E7%AD%89%E7%9F%A9%E9%98%B5"><span class="nav-text">二、初等矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E7%9F%A9%E9%98%B5%E7%AD%89%E4%BB%B7"><span class="nav-text">三、矩阵等价</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E8%A1%8C%E9%98%B6%E6%A2%AF%E7%9F%A9%E9%98%B5"><span class="nav-text">四、行阶梯矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E8%A1%8C%E6%9C%80%E7%AE%80%E7%9F%A9%E9%98%B5"><span class="nav-text">五、行最简矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E5%88%9D%E7%AD%89%E8%A1%8C%E5%8F%98%E6%8D%A2%E6%B1%82%E9%80%86%E7%9F%A9%E9%98%B5"><span class="nav-text">六、初等行变换求逆矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E7%A7%A9%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">七、秩的概念</span></a></li></ol></div>
             
 
           </div>
@@ -857,7 +880,7 @@ x_2+2x_3=2
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.9k字</span>
+  <span class="post-count">博客全站共4.2k字</span>
 </div>
 
 

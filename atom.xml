@@ -6,7 +6,7 @@
   <link href="http://qz1024.github.io/atom.xml" rel="self"/>
   
   <link href="http://qz1024.github.io/"/>
-  <updated>2021-03-26T07:29:09.906Z</updated>
+  <updated>2021-03-28T07:28:36.542Z</updated>
   <id>http://qz1024.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>矩阵的初等变换</title>
+    <title>用初等行变换求逆矩阵、秩的概念</title>
+    <link href="http://qz1024.github.io/2021/03/28/xd6/"/>
+    <id>http://qz1024.github.io/2021/03/28/xd6/</id>
+    <published>2021-03-28T03:34:25.000Z</published>
+    <updated>2021-03-28T07:28:36.542Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="线代" scheme="http://qz1024.github.io/categories/%E7%BA%BF%E4%BB%A3/"/>
+    
+    
+    <category term="线代" scheme="http://qz1024.github.io/tags/%E7%BA%BF%E4%BB%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>矩阵的初等变换与初等矩阵</title>
     <link href="http://qz1024.github.io/2021/03/26/xd5/"/>
     <id>http://qz1024.github.io/2021/03/26/xd5/</id>
     <published>2021-03-26T04:19:06.000Z</published>
-    <updated>2021-03-26T07:29:09.906Z</updated>
+    <updated>2021-03-28T07:28:56.534Z</updated>
     
     
     <summary type="html">&lt;hr&gt;
@@ -47,7 +72,7 @@
     <link href="http://qz1024.github.io/2021/03/24/xd4/"/>
     <id>http://qz1024.github.io/2021/03/24/xd4/</id>
     <published>2021-03-24T13:48:33.000Z</published>
-    <updated>2021-03-25T16:45:34.492Z</updated>
+    <updated>2021-03-28T05:59:35.127Z</updated>
     
     
     <summary type="html">&lt;hr&gt;
