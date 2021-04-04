@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>最大的矩形</title>
+    <url>/2021/03/16/acm/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
+<h2 id="一、题目描述"><a href="#一、题目描述" class="headerlink" title="一、题目描述"></a>一、题目描述</h2><p><a href="http://118.190.20.162/view.page?gpid=T3">题目链接</a></p>
+<p><img src="https://gitee.com/qztanging/images/raw/master/img/acm_1.png" alt="题目描述" title="描述"><br><span id="more"></span></p>
+<p><img src="https://gitee.com/qztanging/images/raw/master/img/acm_2.png" alt="题目描述"></p>
+<hr>
+<h2 id="二、分析"><a href="#二、分析" class="headerlink" title="二、分析"></a>二、分析</h2><ul>
+<li>首先看数据范围：1&lt;= n &lt;= 1000 &amp;&amp; 1&lt;= hi &lt;= 10000 ,需要时间复杂度小于等于 O(n<sup>2</sup>) </li>
+<li>确定枚举的对象，本题中可以枚举矩形的上边界。知道矩形的上边界和左右边界之后就可以确定一个矩形。枚举矩形的上边界，设横坐标为 i ，高度为 h，经过观察可以发现，上边界确定之后，以该边为上边界的最大矩形就可以确定：左边界为 i 前左数高度第一个小于 h 的；右边界为i 后往右数高度第一个小于 h 的。之后更新最大矩形。</li>
+</ul>
+<hr>
+<h2 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1020</span>;</span><br><span class="line"><span class="keyword">int</span> n,re,ans;</span><br><span class="line"><span class="keyword">int</span> h[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;	</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;= n;i++)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;h[i];</span><br><span class="line">	&#125;</span><br><span class="line">    	<span class="comment">//枚举上边界</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;= n;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> l = i,r = i;</span><br><span class="line">        <span class="comment">//搜索左边界</span></span><br><span class="line">		<span class="keyword">while</span>(l&gt;= <span class="number">1</span> &amp;&amp; h[l]&gt;= h[i])&#123;</span><br><span class="line">			l--;</span><br><span class="line">		&#125;</span><br><span class="line">        <span class="comment">//搜索右边界</span></span><br><span class="line">		<span class="keyword">while</span>(r &lt;= n &amp;&amp; h[r] &gt;= h[i])&#123;</span><br><span class="line">			r++;</span><br><span class="line">		&#125;</span><br><span class="line">        <span class="comment">//计算矩形面积，注意r - l之后需要减1.</span></span><br><span class="line">		re = (r - l - <span class="number">1</span>)*h[i];</span><br><span class="line">		ans = max(re,ans);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>acm</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>枚举</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>有趣的数</title>
     <url>/2021/03/17/acm2-1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
@@ -324,79 +347,6 @@ D=
       </tags>
   </entry>
   <entry>
-    <title>可逆矩阵</title>
-    <url>/2021/03/24/xd4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
-<hr>
-<h2 id="一、方阵的行列式"><a href="#一、方阵的行列式" class="headerlink" title="一、方阵的行列式"></a>一、方阵的行列式</h2><blockquote>
-<p>设$A=[a_{ij}]$为$n$阶矩阵。其所有元素所构成的行列式称为方阵$A$的行列式，记为$|A|$</p>
-</blockquote>
-<span id="more"></span>
-<p>tips:</p>
-<ol>
-<li><p>只有方阵才有行列式$A$</p>
-</li>
-<li><p>$A=0$和$|A|=0$不要混</p>
-<p><img src="https://i.loli.net/2021/03/24/jtH5nJlC7orEdQv.png" alt="image-20210324215634667"></p>
-</li>
-</ol>
-<p>方阵行列式公式:</p>
-<p><img src="https://i.loli.net/2021/03/28/Nm1OAEkMasvrXo3.png" alt="image-20210328113835852"></p>
-<hr>
-<h2 id="二、伴随矩阵"><a href="#二、伴随矩阵" class="headerlink" title="二、伴随矩阵"></a>二、伴随矩阵</h2><p><img src="https://i.loli.net/2021/03/24/92AhxGQozslTBMg.png" alt="image-20210324222507399"></p>
-<p><img src="https://i.loli.net/2021/03/24/dMLFBK12PryOR9X.png" alt="image-20210324222615805"></p>
-<p><font color =red>tips:二阶方阵的伴随矩阵：主对角线互换，副对角线变号</font></p>
-<script type="math/tex; mode=display">
-A=
-\begin{bmatrix} 1 & 2 \\ -1 & 3 \end{bmatrix}
-,则|A|=3-(-2)=5,
-A*=
-\begin{bmatrix} 3 & -2 \\ 1 & 1 \end{bmatrix}\\
-A^{-1}= \frac{1}{5}A*</script><hr>
-<h2 id="三、可逆矩阵"><a href="#三、可逆矩阵" class="headerlink" title="三、可逆矩阵"></a>三、可逆矩阵</h2><blockquote>
-<p>对于$n$阶矩阵A，如果存在n阶矩阵B，使得$AB=BA=E$,则称矩阵A是可逆的，称B为A的逆矩阵，记作$A^{-1}=B$</p>
-</blockquote>
-<p>定理： </p>
-<ul>
-<li>若A可逆，则A的逆矩阵唯一。</li>
-<li>A可逆$\Leftrightarrow |A| \neq 0$ </li>
-<li>设A和B为n阶矩阵且$AB=E$,则$BA=E$</li>
-</ul>
-<p>逆矩阵的运算性质</p>
-<p><img src="https://i.loli.net/2021/03/24/KDzBQt21LH3sTES.png" alt="image-20210324224120395"></p>
-<hr>
-<h2 id="四、求逆矩阵"><a href="#四、求逆矩阵" class="headerlink" title="四、求逆矩阵"></a>四、求逆矩阵</h2><p><img src="https://i.loli.net/2021/03/24/LfT2PEnUj6mrZHS.png" alt="image-20210324225302181"> </p>
-<hr>
-<h2 id="五、分块矩阵的运算"><a href="#五、分块矩阵的运算" class="headerlink" title="五、分块矩阵的运算"></a>五、分块矩阵的运算</h2><ol>
-<li>加法</li>
-</ol>
-<script type="math/tex; mode=display">
-\begin{bmatrix} A_1 & A_2 \\ A_3 & A_4 \end{bmatrix}+
-\begin{bmatrix} B_1 & B_2 \\ B_3 & B_4 \end{bmatrix}=
-\begin{bmatrix} A_1+B_1 & A_2+B_2 \\ A_3+B_3 & A_4+B_4 \end{bmatrix}</script><pre><code>2. 乘法
-</code></pre><script type="math/tex; mode=display">
-\begin{bmatrix} A_1 & A_2 \\ A_3 & A_4 \end{bmatrix}
-\begin{bmatrix} B_1 & B_2 \\ B_3 & B_4 \end{bmatrix}=
-\begin{bmatrix} A_1B_1+A_2B_3 & A_1B_2+A_2B_4 \\ A_3B_1+A_4B_3 & A_3B_2+A_4B_4 \end{bmatrix}</script><pre><code>3. 转置
-</code></pre><script type="math/tex; mode=display">
-\begin{bmatrix} A & B \\ C & D \end{bmatrix}^{T}=
-\begin{bmatrix} A^{T} & C^T \\ B^T &D^T\end{bmatrix}</script><pre><code>4. $n$次方 
-</code></pre><script type="math/tex; mode=display">
-\begin{bmatrix} A & 0 \\ 0 & B \end{bmatrix}^n=
-\begin{bmatrix} A^n & 0 \\ 0 & B^n \end{bmatrix}</script><p>​    5. 逆矩阵    </p>
-<script type="math/tex; mode=display">
-\begin{bmatrix} A & 0 \\ 0 & B \end{bmatrix}^{-1}=
-\begin{bmatrix} A^{-1} & 0 \\ 0 & B^{-1} \end{bmatrix}</script><script type="math/tex; mode=display">
-\begin{bmatrix} 0 & A \\ B & 0 \end{bmatrix}^{-1}=
-\begin{bmatrix} 0 & B^{-1} \\ A^{-1} & 0 \end{bmatrix}</script>]]></content>
-      <categories>
-        <category>线代</category>
-      </categories>
-      <tags>
-        <tag>线代</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>行列式展开式</title>
     <url>/2021/03/23/xd3/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
@@ -466,6 +416,79 @@ D=
 <hr>
 <h2 id="四、克拉默法则"><a href="#四、克拉默法则" class="headerlink" title="四、克拉默法则"></a>四、克拉默法则</h2><p><img src="https://i.loli.net/2021/03/23/PIeroQLJaAFGZDn.png" alt="image-20210323230740265"></p>
 ]]></content>
+      <categories>
+        <category>线代</category>
+      </categories>
+      <tags>
+        <tag>线代</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>可逆矩阵</title>
+    <url>/2021/03/24/xd4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
+<hr>
+<h2 id="一、方阵的行列式"><a href="#一、方阵的行列式" class="headerlink" title="一、方阵的行列式"></a>一、方阵的行列式</h2><blockquote>
+<p>设$A=[a_{ij}]$为$n$阶矩阵。其所有元素所构成的行列式称为方阵$A$的行列式，记为$|A|$</p>
+</blockquote>
+<span id="more"></span>
+<p>tips:</p>
+<ol>
+<li><p>只有方阵才有行列式$A$</p>
+</li>
+<li><p>$A=0$和$|A|=0$不要混</p>
+<p><img src="https://i.loli.net/2021/03/24/jtH5nJlC7orEdQv.png" alt="image-20210324215634667"></p>
+</li>
+</ol>
+<p>方阵行列式公式:</p>
+<p><img src="https://i.loli.net/2021/03/28/Nm1OAEkMasvrXo3.png" alt="image-20210328113835852"></p>
+<hr>
+<h2 id="二、伴随矩阵"><a href="#二、伴随矩阵" class="headerlink" title="二、伴随矩阵"></a>二、伴随矩阵</h2><p><img src="https://i.loli.net/2021/03/24/92AhxGQozslTBMg.png" alt="image-20210324222507399"></p>
+<p><img src="https://i.loli.net/2021/03/24/dMLFBK12PryOR9X.png" alt="image-20210324222615805"></p>
+<p><font color =red>tips:二阶方阵的伴随矩阵：主对角线互换，副对角线变号</font></p>
+<script type="math/tex; mode=display">
+A=
+\begin{bmatrix} 1 & 2 \\ -1 & 3 \end{bmatrix}
+,则|A|=3-(-2)=5,
+A*=
+\begin{bmatrix} 3 & -2 \\ 1 & 1 \end{bmatrix}\\
+A^{-1}= \frac{1}{5}A*</script><hr>
+<h2 id="三、可逆矩阵"><a href="#三、可逆矩阵" class="headerlink" title="三、可逆矩阵"></a>三、可逆矩阵</h2><blockquote>
+<p>对于$n$阶矩阵A，如果存在n阶矩阵B，使得$AB=BA=E$,则称矩阵A是可逆的，称B为A的逆矩阵，记作$A^{-1}=B$</p>
+</blockquote>
+<p>定理： </p>
+<ul>
+<li>若A可逆，则A的逆矩阵唯一。</li>
+<li>A可逆$\Leftrightarrow |A| \neq 0$ </li>
+<li>设A和B为n阶矩阵且$AB=E$,则$BA=E$</li>
+</ul>
+<p>逆矩阵的运算性质</p>
+<p><img src="https://i.loli.net/2021/03/24/KDzBQt21LH3sTES.png" alt="image-20210324224120395"></p>
+<hr>
+<h2 id="四、求逆矩阵"><a href="#四、求逆矩阵" class="headerlink" title="四、求逆矩阵"></a>四、求逆矩阵</h2><p><img src="https://i.loli.net/2021/03/24/LfT2PEnUj6mrZHS.png" alt="image-20210324225302181"> </p>
+<hr>
+<h2 id="五、分块矩阵的运算"><a href="#五、分块矩阵的运算" class="headerlink" title="五、分块矩阵的运算"></a>五、分块矩阵的运算</h2><ol>
+<li>加法</li>
+</ol>
+<script type="math/tex; mode=display">
+\begin{bmatrix} A_1 & A_2 \\ A_3 & A_4 \end{bmatrix}+
+\begin{bmatrix} B_1 & B_2 \\ B_3 & B_4 \end{bmatrix}=
+\begin{bmatrix} A_1+B_1 & A_2+B_2 \\ A_3+B_3 & A_4+B_4 \end{bmatrix}</script><pre><code>2. 乘法
+</code></pre><script type="math/tex; mode=display">
+\begin{bmatrix} A_1 & A_2 \\ A_3 & A_4 \end{bmatrix}
+\begin{bmatrix} B_1 & B_2 \\ B_3 & B_4 \end{bmatrix}=
+\begin{bmatrix} A_1B_1+A_2B_3 & A_1B_2+A_2B_4 \\ A_3B_1+A_4B_3 & A_3B_2+A_4B_4 \end{bmatrix}</script><pre><code>3. 转置
+</code></pre><script type="math/tex; mode=display">
+\begin{bmatrix} A & B \\ C & D \end{bmatrix}^{T}=
+\begin{bmatrix} A^{T} & C^T \\ B^T &D^T\end{bmatrix}</script><pre><code>4. $n$次方 
+</code></pre><script type="math/tex; mode=display">
+\begin{bmatrix} A & 0 \\ 0 & B \end{bmatrix}^n=
+\begin{bmatrix} A^n & 0 \\ 0 & B^n \end{bmatrix}</script><p>​    5. 逆矩阵    </p>
+<script type="math/tex; mode=display">
+\begin{bmatrix} A & 0 \\ 0 & B \end{bmatrix}^{-1}=
+\begin{bmatrix} A^{-1} & 0 \\ 0 & B^{-1} \end{bmatrix}</script><script type="math/tex; mode=display">
+\begin{bmatrix} 0 & A \\ B & 0 \end{bmatrix}^{-1}=
+\begin{bmatrix} 0 & B^{-1} \\ A^{-1} & 0 \end{bmatrix}</script>]]></content>
       <categories>
         <category>线代</category>
       </categories>
@@ -582,8 +605,7 @@ x_2+2x_3=2
 
 <font color=red>推论：若可逆矩阵$ P,Q$,使得$PAQ=B$,则$r(A)=r(B)$ 。即一个矩阵做有限次初等行变换和初等列变换之后，秩不变。  </font> 
 
-<font color=red>秩的性质：</font>
-
+<p>秩的性质：</p>
 <ol>
 <li>$0 \le r(A_{m \times n}) \le min(m,n)$</li>
 <li>$r(A^T)=r(A)$</li>
@@ -632,29 +654,6 @@ x_2+2x_3=2
       </categories>
       <tags>
         <tag>线代</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>最大的矩形</title>
-    <url>/2021/03/16/acm/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
-<h2 id="一、题目描述"><a href="#一、题目描述" class="headerlink" title="一、题目描述"></a>一、题目描述</h2><p><a href="http://118.190.20.162/view.page?gpid=T3">题目链接</a></p>
-<p><img src="https://gitee.com/qztanging/images/raw/master/img/acm_1.png" alt="题目描述" title="描述"><br><span id="more"></span></p>
-<p><img src="https://gitee.com/qztanging/images/raw/master/img/acm_2.png" alt="题目描述"></p>
-<hr>
-<h2 id="二、分析"><a href="#二、分析" class="headerlink" title="二、分析"></a>二、分析</h2><ul>
-<li>首先看数据范围：1&lt;= n &lt;= 1000 &amp;&amp; 1&lt;= hi &lt;= 10000 ,需要时间复杂度小于等于 O(n<sup>2</sup>) </li>
-<li>确定枚举的对象，本题中可以枚举矩形的上边界。知道矩形的上边界和左右边界之后就可以确定一个矩形。枚举矩形的上边界，设横坐标为 i ，高度为 h，经过观察可以发现，上边界确定之后，以该边为上边界的最大矩形就可以确定：左边界为 i 前左数高度第一个小于 h 的；右边界为i 后往右数高度第一个小于 h 的。之后更新最大矩形。</li>
-</ul>
-<hr>
-<h2 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1020</span>;</span><br><span class="line"><span class="keyword">int</span> n,re,ans;</span><br><span class="line"><span class="keyword">int</span> h[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;	</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;= n;i++)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;h[i];</span><br><span class="line">	&#125;</span><br><span class="line">    	<span class="comment">//枚举上边界</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;= n;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> l = i,r = i;</span><br><span class="line">        <span class="comment">//搜索左边界</span></span><br><span class="line">		<span class="keyword">while</span>(l&gt;= <span class="number">1</span> &amp;&amp; h[l]&gt;= h[i])&#123;</span><br><span class="line">			l--;</span><br><span class="line">		&#125;</span><br><span class="line">        <span class="comment">//搜索右边界</span></span><br><span class="line">		<span class="keyword">while</span>(r &lt;= n &amp;&amp; h[r] &gt;= h[i])&#123;</span><br><span class="line">			r++;</span><br><span class="line">		&#125;</span><br><span class="line">        <span class="comment">//计算矩形面积，注意r - l之后需要减1.</span></span><br><span class="line">		re = (r - l - <span class="number">1</span>)*h[i];</span><br><span class="line">		ans = max(re,ans);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>acm</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>枚举</tag>
       </tags>
   </entry>
 </search>
