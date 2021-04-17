@@ -24,6 +24,40 @@
       </tags>
   </entry>
   <entry>
+    <title>有趣的数</title>
+    <url>/2021/03/17/acm2-1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
+<h2 id="一、-题目描述"><a href="#一、-题目描述" class="headerlink" title="一、 题目描述"></a>一、 题目描述</h2><p><a href="http://118.190.20.162/view.page?gpid=T2">题目链接</a></p>
+<p><img src="https://gitee.com/qztanging/images/raw/master/img/a.jpg" alt="描述"><br><span id="more"></span></p>
+<h2 id="二、分析"><a href="#二、分析" class="headerlink" title="二、分析"></a>二、分析</h2><ul>
+<li><p>题目中有三个要求，可以将0和1看作第一类，2和3看作第一类，然后就是排列组合问题。</p>
+</li>
+<li><p>首先设第一类数个数为 <strong>k</strong> ，则第二类数个数为 <strong>n - k</strong>。<strong>k</strong>的范围为：[2 ，n - 2] </p>
+</li>
+<li><p>从k个位置中选取第一类的位置，因为最高为不能为0，所以第一类的可能位置有 :</p>
+<script type="math/tex; mode=display">
+C_{n-1}^{k}</script></li>
+<li><p>之后具体分第一类中0和1的位置，因为 <strong>0</strong> 在<strong>1</strong>的前面且必须有一个，所以第一类里面的情况有  <strong>k-1</strong> 种：01111…11(一个0和k-1个1)  和00111…111(两个0和k-2个1)  到 0000…0001  (k-1个0和共1个1)。</p>
+</li>
+<li><p>同理第二类数字中的位置情况： <strong>n - k - 1</strong>种。</p>
+</li>
+<li><p><strong>综上所述</strong>，方案数为：</p>
+<script type="math/tex; mode=display">
+\sum_{k=2}^{n-2}  C_{n-1}^{k} \times (k-1) \times (n-k-1)</script></li>
+</ul>
+<hr>
+<h2 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1010</span>,mod = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> n,re,t,c[N][N];</span><br><span class="line"><span class="comment">//组合数数组的初始化</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;= n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j&lt;= i;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!j)  c[i][j] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                c[i][j] = (c[i<span class="number">-1</span>][j<span class="number">-1</span>] + c[i<span class="number">-1</span>][j])%mod;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	init();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i &lt;= n<span class="number">-2</span> ; i++)&#123;</span><br><span class="line">        <span class="comment">//因为可能超范围，所以转换为long,相乘的中间也要模一下</span></span><br><span class="line">        re =( re +  (ll)c[n<span class="number">-1</span>][i]*(i<span class="number">-1</span>)%mod  *(n<span class="number">-1</span>-i)  )%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;re&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>acm</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>枚举</tag>
+        <tag>组合数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>行列式概念</title>
     <url>/2021/03/21/post/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
@@ -169,109 +203,6 @@ a_{31}&&a_{32}&&a_{33}
       </tags>
   </entry>
   <entry>
-    <title>有趣的数</title>
-    <url>/2021/03/17/acm2-1/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
-<h2 id="一、-题目描述"><a href="#一、-题目描述" class="headerlink" title="一、 题目描述"></a>一、 题目描述</h2><p><a href="http://118.190.20.162/view.page?gpid=T2">题目链接</a></p>
-<p><img src="https://gitee.com/qztanging/images/raw/master/img/a.jpg" alt="描述"><br><span id="more"></span></p>
-<h2 id="二、分析"><a href="#二、分析" class="headerlink" title="二、分析"></a>二、分析</h2><ul>
-<li><p>题目中有三个要求，可以将0和1看作第一类，2和3看作第一类，然后就是排列组合问题。</p>
-</li>
-<li><p>首先设第一类数个数为 <strong>k</strong> ，则第二类数个数为 <strong>n - k</strong>。<strong>k</strong>的范围为：[2 ，n - 2] </p>
-</li>
-<li><p>从k个位置中选取第一类的位置，因为最高为不能为0，所以第一类的可能位置有 :</p>
-<script type="math/tex; mode=display">
-C_{n-1}^{k}</script></li>
-<li><p>之后具体分第一类中0和1的位置，因为 <strong>0</strong> 在<strong>1</strong>的前面且必须有一个，所以第一类里面的情况有  <strong>k-1</strong> 种：01111…11(一个0和k-1个1)  和00111…111(两个0和k-2个1)  到 0000…0001  (k-1个0和共1个1)。</p>
-</li>
-<li><p>同理第二类数字中的位置情况： <strong>n - k - 1</strong>种。</p>
-</li>
-<li><p><strong>综上所述</strong>，方案数为：</p>
-<script type="math/tex; mode=display">
-\sum_{k=2}^{n-2}  C_{n-1}^{k} \times (k-1) \times (n-k-1)</script></li>
-</ul>
-<hr>
-<h2 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1010</span>,mod = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> n,re,t,c[N][N];</span><br><span class="line"><span class="comment">//组合数数组的初始化</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;= n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j&lt;= i;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!j)  c[i][j] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                c[i][j] = (c[i<span class="number">-1</span>][j<span class="number">-1</span>] + c[i<span class="number">-1</span>][j])%mod;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	init();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i &lt;= n<span class="number">-2</span> ; i++)&#123;</span><br><span class="line">        <span class="comment">//因为可能超范围，所以转换为long,相乘的中间也要模一下</span></span><br><span class="line">        re =( re +  (ll)c[n<span class="number">-1</span>][i]*(i<span class="number">-1</span>)%mod  *(n<span class="number">-1</span>-i)  )%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;re&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>acm</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>枚举</tag>
-        <tag>组合数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>矩阵</title>
-    <url>/2021/03/23/xd2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
-<h2 id="一、矩阵的定义及运算"><a href="#一、矩阵的定义及运算" class="headerlink" title="一、矩阵的定义及运算"></a>一、矩阵的定义及运算</h2><p><img src="https://i.loli.net/2021/03/23/kf6ghYJGdUZbWKD.png" alt="image-20210323231848819"></p>
-<p>注意：<font color =red>矩阵$A$是一个表格，而行列式$|A|$是一个数。</font></p>
-<span id="more"></span>
-<h2 id="二、常见的矩阵"><a href="#二、常见的矩阵" class="headerlink" title="二、常见的矩阵"></a>二、常见的矩阵</h2><ul>
-<li>单位矩阵：主对角线元素为$1$，其余元素为$0$的矩阵为单位矩阵，记为$E$</li>
-<li>对角矩阵：非对角元素都是$0$的矩阵(即$\forall i \neq j$恒有$a_{ij}=0$)成为对角矩阵</li>
-<li>上(下)三角矩阵：当$i&gt;j(i&lt;j)$时，有$a_{ij}=0$称为上(下)三角矩阵</li>
-<li>对称矩阵：满足$A^{T}=A$ ，即 $a<em>{ij}=a</em>{ji}$的矩阵称为对称矩阵</li>
-<li>反对称矩阵：满足$A^{T}=-A$,即$a<em>{ij}=-a</em>{ji},a_{ii}=0$的矩阵称为反对称矩阵</li>
-</ul>
-<h2 id="三、矩阵的运算"><a href="#三、矩阵的运算" class="headerlink" title="三、矩阵的运算"></a>三、矩阵的运算</h2><ul>
-<li>加法</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/24/LHJ9V7nswEkCNR3.png" alt="image-20210324120024689"></p>
-<ul>
-<li><p>数乘</p>
-<p><img src="https://i.loli.net/2021/03/24/VFrgKeEcixw7N5U.png" alt="image-20210324120039681"></p>
-</li>
-<li><p>乘法</p>
-<p><img src="https://i.loli.net/2021/03/24/OrlcXfxzmD6WiH8.png" alt="image-20210324120132691"></p>
-</li>
-<li><p>转置</p>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/24/AVOg6UBdm1Mk5Cj.png" alt="image-20210324120155384"></p>
-<ul>
-<li><font color =red>tips</font> <ol>
-<li>$AB \neq BA$</li>
-<li>由$AB=0 \nRightarrow A=0$或$B=0$</li>
-<li>由$AB=AC$且$A \neq 0 \nRightarrow B=C$</li>
-</ol>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/24/dIAJC9HxiyGuqV7.png" alt="image-20210324161522082"></p>
-<hr>
-<p>对角矩阵运算：</p>
-<ul>
-<li>相乘</li>
-</ul>
-<script type="math/tex; mode=display">
-\begin{bmatrix} a_1 & 0 &0 \\ 0 & a_2&0\\0&0&a_3 \end{bmatrix}
-\begin{bmatrix} b_1 & 0 &0 \\ 0 & b_2&0\\0&0&b_3 \end{bmatrix}=
-\begin{bmatrix} a_1b_1 & 0 &0 \\ 0 & a_2b_2&0\\0&0&a_3b_3 \end{bmatrix}</script><ul>
-<li>n次方</li>
-</ul>
-<script type="math/tex; mode=display">
-\begin{bmatrix} a_1 & 0 &0 \\ 0 & a_2&0\\0&0&a_3 \end{bmatrix}^{n}=
-\begin{bmatrix} a_1^{n} & 0 &0 \\ 0 & a_2^{n}&0\\0&0&a_3^{n} \end{bmatrix}</script><ul>
-<li>逆矩阵</li>
-</ul>
-<script type="math/tex; mode=display">
-\begin{bmatrix} a_1 & 0 &0 \\ 0 & a_2&0\\0&0&a_3 \end{bmatrix}
-\begin{bmatrix} \frac{1}{a_1} & 0 &0 \\ 0 & \frac{1}{a_2}&0\\0&0&\frac{1}{a_3} \end{bmatrix}=
-\begin{bmatrix} 1 & 0 &0 \\ 0 & 1&0\\0&0&1 \end{bmatrix}\\
-所以,
-\begin{bmatrix} a_1 & 0 &0 \\ 0 & a_2&0\\0&0&a_3 \end{bmatrix}^{-1}=
-\begin{bmatrix} \frac{1}{a_1} & 0 &0 \\ 0 & \frac{1}{a_2}&0\\0&0&\frac{1}{a_3} \end{bmatrix}</script>]]></content>
-      <categories>
-        <category>线代</category>
-      </categories>
-      <tags>
-        <tag>线代</tag>
-        <tag>矩阵</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>行列式性质</title>
     <url>/2021/03/22/xd/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
@@ -347,76 +278,72 @@ D=
       </tags>
   </entry>
   <entry>
-    <title>可逆矩阵</title>
-    <url>/2021/03/24/xd4/</url>
+    <title>矩阵</title>
+    <url>/2021/03/23/xd2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
-<hr>
-<h2 id="一、方阵的行列式"><a href="#一、方阵的行列式" class="headerlink" title="一、方阵的行列式"></a>一、方阵的行列式</h2><blockquote>
-<p>设$A=[a_{ij}]$为$n$阶矩阵。其所有元素所构成的行列式称为方阵$A$的行列式，记为$|A|$</p>
-</blockquote>
+<h2 id="一、矩阵的定义及运算"><a href="#一、矩阵的定义及运算" class="headerlink" title="一、矩阵的定义及运算"></a>一、矩阵的定义及运算</h2><p><img src="https://i.loli.net/2021/03/23/kf6ghYJGdUZbWKD.png" alt="image-20210323231848819"></p>
+<p>注意：<font color =red>矩阵$A$是一个表格，而行列式$|A|$是一个数。</font></p>
 <span id="more"></span>
-<p>tips:</p>
-<ol>
-<li><p>只有方阵才有行列式$A$</p>
-</li>
-<li><p>$A=0$和$|A|=0$不要混</p>
-<p><img src="https://i.loli.net/2021/03/24/jtH5nJlC7orEdQv.png" alt="image-20210324215634667"></p>
-</li>
-</ol>
-<p>方阵行列式公式:</p>
-<p><img src="https://i.loli.net/2021/03/28/Nm1OAEkMasvrXo3.png" alt="image-20210328113835852"></p>
-<hr>
-<h2 id="二、伴随矩阵"><a href="#二、伴随矩阵" class="headerlink" title="二、伴随矩阵"></a>二、伴随矩阵</h2><p><img src="https://i.loli.net/2021/03/24/92AhxGQozslTBMg.png" alt="image-20210324222507399"></p>
-<p><img src="https://i.loli.net/2021/03/24/dMLFBK12PryOR9X.png" alt="image-20210324222615805"></p>
-<p><font color =red>tips:二阶方阵的伴随矩阵：主对角线互换，副对角线变号</font></p>
-<script type="math/tex; mode=display">
-A=
-\begin{bmatrix} 1 & 2 \\ -1 & 3 \end{bmatrix}
-,则|A|=3-(-2)=5,
-A*=
-\begin{bmatrix} 3 & -2 \\ 1 & 1 \end{bmatrix}\\
-A^{-1}= \frac{1}{5}A*</script><hr>
-<h2 id="三、可逆矩阵"><a href="#三、可逆矩阵" class="headerlink" title="三、可逆矩阵"></a>三、可逆矩阵</h2><blockquote>
-<p>对于$n$阶矩阵A，如果存在n阶矩阵B，使得$AB=BA=E$,则称矩阵A是可逆的，称B为A的逆矩阵，记作$A^{-1}=B$</p>
-</blockquote>
-<p>定理： </p>
-<ul>
-<li>若A可逆，则A的逆矩阵唯一。</li>
-<li>A可逆$\Leftrightarrow |A| \neq 0$ </li>
-<li>设A和B为n阶矩阵且$AB=E$,则$BA=E$</li>
+<h2 id="二、常见的矩阵"><a href="#二、常见的矩阵" class="headerlink" title="二、常见的矩阵"></a>二、常见的矩阵</h2><ul>
+<li>单位矩阵：主对角线元素为$1$，其余元素为$0$的矩阵为单位矩阵，记为$E$</li>
+<li>对角矩阵：非对角元素都是$0$的矩阵(即$\forall i \neq j$恒有$a_{ij}=0$)成为对角矩阵</li>
+<li>上(下)三角矩阵：当$i&gt;j(i&lt;j)$时，有$a_{ij}=0$称为上(下)三角矩阵</li>
+<li>对称矩阵：满足$A^{T}=A$ ，即 $a<em>{ij}=a</em>{ji}$的矩阵称为对称矩阵</li>
+<li>反对称矩阵：满足$A^{T}=-A$,即$a<em>{ij}=-a</em>{ji},a_{ii}=0$的矩阵称为反对称矩阵</li>
 </ul>
-<p>逆矩阵的运算性质</p>
-<p><img src="https://i.loli.net/2021/03/24/KDzBQt21LH3sTES.png" alt="image-20210324224120395"></p>
-<hr>
-<h2 id="四、求逆矩阵"><a href="#四、求逆矩阵" class="headerlink" title="四、求逆矩阵"></a>四、求逆矩阵</h2><p><img src="https://i.loli.net/2021/03/24/LfT2PEnUj6mrZHS.png" alt="image-20210324225302181"> </p>
-<hr>
-<h2 id="五、分块矩阵的运算"><a href="#五、分块矩阵的运算" class="headerlink" title="五、分块矩阵的运算"></a>五、分块矩阵的运算</h2><ol>
+<h2 id="三、矩阵的运算"><a href="#三、矩阵的运算" class="headerlink" title="三、矩阵的运算"></a>三、矩阵的运算</h2><ul>
 <li>加法</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/24/LHJ9V7nswEkCNR3.png" alt="image-20210324120024689"></p>
+<ul>
+<li><p>数乘</p>
+<p><img src="https://i.loli.net/2021/03/24/VFrgKeEcixw7N5U.png" alt="image-20210324120039681"></p>
+</li>
+<li><p>乘法</p>
+<p><img src="https://i.loli.net/2021/03/24/OrlcXfxzmD6WiH8.png" alt="image-20210324120132691"></p>
+</li>
+<li><p>转置</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/24/AVOg6UBdm1Mk5Cj.png" alt="image-20210324120155384"></p>
+<ul>
+<li><font color =red>tips</font> <ol>
+<li>$AB \neq BA$</li>
+<li>由$AB=0 \nRightarrow A=0$或$B=0$</li>
+<li>由$AB=AC$且$A \neq 0 \nRightarrow B=C$</li>
 </ol>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/24/dIAJC9HxiyGuqV7.png" alt="image-20210324161522082"></p>
+<hr>
+<p>对角矩阵运算：</p>
+<ul>
+<li>相乘</li>
+</ul>
 <script type="math/tex; mode=display">
-\begin{bmatrix} A_1 & A_2 \\ A_3 & A_4 \end{bmatrix}+
-\begin{bmatrix} B_1 & B_2 \\ B_3 & B_4 \end{bmatrix}=
-\begin{bmatrix} A_1+B_1 & A_2+B_2 \\ A_3+B_3 & A_4+B_4 \end{bmatrix}</script><pre><code>2. 乘法
-</code></pre><script type="math/tex; mode=display">
-\begin{bmatrix} A_1 & A_2 \\ A_3 & A_4 \end{bmatrix}
-\begin{bmatrix} B_1 & B_2 \\ B_3 & B_4 \end{bmatrix}=
-\begin{bmatrix} A_1B_1+A_2B_3 & A_1B_2+A_2B_4 \\ A_3B_1+A_4B_3 & A_3B_2+A_4B_4 \end{bmatrix}</script><pre><code>3. 转置
-</code></pre><script type="math/tex; mode=display">
-\begin{bmatrix} A & B \\ C & D \end{bmatrix}^{T}=
-\begin{bmatrix} A^{T} & C^T \\ B^T &D^T\end{bmatrix}</script><pre><code>4. $n$次方 
-</code></pre><script type="math/tex; mode=display">
-\begin{bmatrix} A & 0 \\ 0 & B \end{bmatrix}^n=
-\begin{bmatrix} A^n & 0 \\ 0 & B^n \end{bmatrix}</script><p>​    5. 逆矩阵    </p>
+\begin{bmatrix} a_1 & 0 &0 \\ 0 & a_2&0\\0&0&a_3 \end{bmatrix}
+\begin{bmatrix} b_1 & 0 &0 \\ 0 & b_2&0\\0&0&b_3 \end{bmatrix}=
+\begin{bmatrix} a_1b_1 & 0 &0 \\ 0 & a_2b_2&0\\0&0&a_3b_3 \end{bmatrix}</script><ul>
+<li>n次方</li>
+</ul>
 <script type="math/tex; mode=display">
-\begin{bmatrix} A & 0 \\ 0 & B \end{bmatrix}^{-1}=
-\begin{bmatrix} A^{-1} & 0 \\ 0 & B^{-1} \end{bmatrix}</script><script type="math/tex; mode=display">
-\begin{bmatrix} 0 & A \\ B & 0 \end{bmatrix}^{-1}=
-\begin{bmatrix} 0 & B^{-1} \\ A^{-1} & 0 \end{bmatrix}</script>]]></content>
+\begin{bmatrix} a_1 & 0 &0 \\ 0 & a_2&0\\0&0&a_3 \end{bmatrix}^{n}=
+\begin{bmatrix} a_1^{n} & 0 &0 \\ 0 & a_2^{n}&0\\0&0&a_3^{n} \end{bmatrix}</script><ul>
+<li>逆矩阵</li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{bmatrix} a_1 & 0 &0 \\ 0 & a_2&0\\0&0&a_3 \end{bmatrix}
+\begin{bmatrix} \frac{1}{a_1} & 0 &0 \\ 0 & \frac{1}{a_2}&0\\0&0&\frac{1}{a_3} \end{bmatrix}=
+\begin{bmatrix} 1 & 0 &0 \\ 0 & 1&0\\0&0&1 \end{bmatrix}\\
+所以,
+\begin{bmatrix} a_1 & 0 &0 \\ 0 & a_2&0\\0&0&a_3 \end{bmatrix}^{-1}=
+\begin{bmatrix} \frac{1}{a_1} & 0 &0 \\ 0 & \frac{1}{a_2}&0\\0&0&\frac{1}{a_3} \end{bmatrix}</script>]]></content>
       <categories>
         <category>线代</category>
       </categories>
       <tags>
         <tag>线代</tag>
+        <tag>矩阵</tag>
       </tags>
   </entry>
   <entry>
@@ -489,6 +416,79 @@ D=
 <hr>
 <h2 id="四、克拉默法则"><a href="#四、克拉默法则" class="headerlink" title="四、克拉默法则"></a>四、克拉默法则</h2><p><img src="https://i.loli.net/2021/03/23/PIeroQLJaAFGZDn.png" alt="image-20210323230740265"></p>
 ]]></content>
+      <categories>
+        <category>线代</category>
+      </categories>
+      <tags>
+        <tag>线代</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>可逆矩阵</title>
+    <url>/2021/03/24/xd4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
+<hr>
+<h2 id="一、方阵的行列式"><a href="#一、方阵的行列式" class="headerlink" title="一、方阵的行列式"></a>一、方阵的行列式</h2><blockquote>
+<p>设$A=[a_{ij}]$为$n$阶矩阵。其所有元素所构成的行列式称为方阵$A$的行列式，记为$|A|$</p>
+</blockquote>
+<span id="more"></span>
+<p>tips:</p>
+<ol>
+<li><p>只有方阵才有行列式$A$</p>
+</li>
+<li><p>$A=0$和$|A|=0$不要混</p>
+<p><img src="https://i.loli.net/2021/03/24/jtH5nJlC7orEdQv.png" alt="image-20210324215634667"></p>
+</li>
+</ol>
+<p>方阵行列式公式:</p>
+<p><img src="https://i.loli.net/2021/03/28/Nm1OAEkMasvrXo3.png" alt="image-20210328113835852"></p>
+<hr>
+<h2 id="二、伴随矩阵"><a href="#二、伴随矩阵" class="headerlink" title="二、伴随矩阵"></a>二、伴随矩阵</h2><p><img src="https://i.loli.net/2021/03/24/92AhxGQozslTBMg.png" alt="image-20210324222507399"></p>
+<p><img src="https://i.loli.net/2021/03/24/dMLFBK12PryOR9X.png" alt="image-20210324222615805"></p>
+<p><font color =red>tips:二阶方阵的伴随矩阵：主对角线互换，副对角线变号</font></p>
+<script type="math/tex; mode=display">
+A=
+\begin{bmatrix} 1 & 2 \\ -1 & 3 \end{bmatrix}
+,则|A|=3-(-2)=5,
+A*=
+\begin{bmatrix} 3 & -2 \\ 1 & 1 \end{bmatrix}\\
+A^{-1}= \frac{1}{5}A*</script><hr>
+<h2 id="三、可逆矩阵"><a href="#三、可逆矩阵" class="headerlink" title="三、可逆矩阵"></a>三、可逆矩阵</h2><blockquote>
+<p>对于$n$阶矩阵A，如果存在n阶矩阵B，使得$AB=BA=E$,则称矩阵A是可逆的，称B为A的逆矩阵，记作$A^{-1}=B$</p>
+</blockquote>
+<p>定理： </p>
+<ul>
+<li>若A可逆，则A的逆矩阵唯一。</li>
+<li>A可逆$\Leftrightarrow |A| \neq 0$ </li>
+<li>设A和B为n阶矩阵且$AB=E$,则$BA=E$</li>
+</ul>
+<p>逆矩阵的运算性质</p>
+<p><img src="https://i.loli.net/2021/03/24/KDzBQt21LH3sTES.png" alt="image-20210324224120395"></p>
+<hr>
+<h2 id="四、求逆矩阵"><a href="#四、求逆矩阵" class="headerlink" title="四、求逆矩阵"></a>四、求逆矩阵</h2><p><img src="https://i.loli.net/2021/03/24/LfT2PEnUj6mrZHS.png" alt="image-20210324225302181"> </p>
+<hr>
+<h2 id="五、分块矩阵的运算"><a href="#五、分块矩阵的运算" class="headerlink" title="五、分块矩阵的运算"></a>五、分块矩阵的运算</h2><ol>
+<li>加法</li>
+</ol>
+<script type="math/tex; mode=display">
+\begin{bmatrix} A_1 & A_2 \\ A_3 & A_4 \end{bmatrix}+
+\begin{bmatrix} B_1 & B_2 \\ B_3 & B_4 \end{bmatrix}=
+\begin{bmatrix} A_1+B_1 & A_2+B_2 \\ A_3+B_3 & A_4+B_4 \end{bmatrix}</script><pre><code>2. 乘法
+</code></pre><script type="math/tex; mode=display">
+\begin{bmatrix} A_1 & A_2 \\ A_3 & A_4 \end{bmatrix}
+\begin{bmatrix} B_1 & B_2 \\ B_3 & B_4 \end{bmatrix}=
+\begin{bmatrix} A_1B_1+A_2B_3 & A_1B_2+A_2B_4 \\ A_3B_1+A_4B_3 & A_3B_2+A_4B_4 \end{bmatrix}</script><pre><code>3. 转置
+</code></pre><script type="math/tex; mode=display">
+\begin{bmatrix} A & B \\ C & D \end{bmatrix}^{T}=
+\begin{bmatrix} A^{T} & C^T \\ B^T &D^T\end{bmatrix}</script><pre><code>4. $n$次方 
+</code></pre><script type="math/tex; mode=display">
+\begin{bmatrix} A & 0 \\ 0 & B \end{bmatrix}^n=
+\begin{bmatrix} A^n & 0 \\ 0 & B^n \end{bmatrix}</script><p>​    5. 逆矩阵    </p>
+<script type="math/tex; mode=display">
+\begin{bmatrix} A & 0 \\ 0 & B \end{bmatrix}^{-1}=
+\begin{bmatrix} A^{-1} & 0 \\ 0 & B^{-1} \end{bmatrix}</script><script type="math/tex; mode=display">
+\begin{bmatrix} 0 & A \\ B & 0 \end{bmatrix}^{-1}=
+\begin{bmatrix} 0 & B^{-1} \\ A^{-1} & 0 \end{bmatrix}</script>]]></content>
       <categories>
         <category>线代</category>
       </categories>
@@ -643,20 +643,6 @@ x_2+2x_3=2
       </tags>
   </entry>
   <entry>
-    <title>用初等行变换求逆矩阵、秩的概念</title>
-    <url>/2021/03/28/xd6/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
-<hr>
-<p>Nothing……</p>
-]]></content>
-      <categories>
-        <category>线代</category>
-      </categories>
-      <tags>
-        <tag>线代</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo警示框插件</title>
     <url>/2021/04/04/xj-1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
@@ -674,6 +660,20 @@ x_2+2x_3=2
 ]]></content>
       <tags>
         <tag>插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用初等行变换求逆矩阵、秩的概念</title>
+    <url>/2021/03/28/xd6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
+<hr>
+<p>Nothing……</p>
+]]></content>
+      <categories>
+        <category>线代</category>
+      </categories>
+      <tags>
+        <tag>线代</tag>
       </tags>
   </entry>
 </search>
