@@ -37,27 +37,22 @@
   </entry>
   
   <entry>
-    <title>用初等行变换求逆矩阵、秩的概念</title>
-    <link href="http://qz1024.github.io/2021/03/28/xd6/"/>
-    <id>http://qz1024.github.io/2021/03/28/xd6/</id>
-    <published>2021-03-28T03:34:25.000Z</published>
-    <updated>2021-03-28T07:28:36.542Z</updated>
+    <title>HOG特征提取</title>
+    <link href="http://qz1024.github.io/2021/04/02/xd6/"/>
+    <id>http://qz1024.github.io/2021/04/02/xd6/</id>
+    <published>2021-04-02T03:34:25.000Z</published>
+    <updated>2021-04-21T14:00:36.408Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
+    <summary type="html">&lt;h3 id=&quot;原文链接：戳这里！&quot;&gt;&lt;a href=&quot;#原文链接：戳这里！&quot; class=&quot;headerlink&quot; title=&quot;原文链接：戳这里！&quot;&gt;&lt;/a&gt;原文链接：&lt;a href=&quot;https://zhuanlan.zhihu.com/p/85829145&quot;&gt;戳这里！&lt;/a&gt;&lt;/h3&gt;&lt;h2 id=&quot;HOG&quot;&gt;&lt;a href=&quot;#HOG&quot; class=&quot;headerlink&quot; title=&quot;HOG&quot;&gt;&lt;/a&gt;HOG&lt;/h2&gt;&lt;h2 id=&quot;前言：特征描述符&quot;&gt;&lt;a href=&quot;#前言：特征描述符&quot; class=&quot;headerlink&quot; title=&quot;前言：特征描述符&quot;&gt;&lt;/a&gt;前言：特征描述符&lt;/h2&gt;&lt;p&gt;特征描述符就是通过提取图像的有用信息，并且丢弃无关信息来简化图像的表示。&lt;/p&gt;
+&lt;p&gt;HOG特征描述符可以将3通道的彩色图像转换成一定长度的特征向量。&lt;/p&gt;</summary>
     
     
     
-    <category term="线代" scheme="http://qz1024.github.io/categories/%E7%BA%BF%E4%BB%A3/"/>
+    <category term="计算机视觉" scheme="http://qz1024.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
     
     
-    <category term="线代" scheme="http://qz1024.github.io/tags/%E7%BA%BF%E4%BB%A3/"/>
+    <category term="hog" scheme="http://qz1024.github.io/tags/hog/"/>
     
   </entry>
   

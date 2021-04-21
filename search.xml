@@ -278,6 +278,79 @@ D=
       </tags>
   </entry>
   <entry>
+    <title>可逆矩阵</title>
+    <url>/2021/03/24/xd4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
+<hr>
+<h2 id="一、方阵的行列式"><a href="#一、方阵的行列式" class="headerlink" title="一、方阵的行列式"></a>一、方阵的行列式</h2><blockquote>
+<p>设$A=[a_{ij}]$为$n$阶矩阵。其所有元素所构成的行列式称为方阵$A$的行列式，记为$|A|$</p>
+</blockquote>
+<span id="more"></span>
+<p>tips:</p>
+<ol>
+<li><p>只有方阵才有行列式$A$</p>
+</li>
+<li><p>$A=0$和$|A|=0$不要混</p>
+<p><img src="https://i.loli.net/2021/03/24/jtH5nJlC7orEdQv.png" alt="image-20210324215634667"></p>
+</li>
+</ol>
+<p>方阵行列式公式:</p>
+<p><img src="https://i.loli.net/2021/03/28/Nm1OAEkMasvrXo3.png" alt="image-20210328113835852"></p>
+<hr>
+<h2 id="二、伴随矩阵"><a href="#二、伴随矩阵" class="headerlink" title="二、伴随矩阵"></a>二、伴随矩阵</h2><p><img src="https://i.loli.net/2021/03/24/92AhxGQozslTBMg.png" alt="image-20210324222507399"></p>
+<p><img src="https://i.loli.net/2021/03/24/dMLFBK12PryOR9X.png" alt="image-20210324222615805"></p>
+<p><font color =red>tips:二阶方阵的伴随矩阵：主对角线互换，副对角线变号</font></p>
+<script type="math/tex; mode=display">
+A=
+\begin{bmatrix} 1 & 2 \\ -1 & 3 \end{bmatrix}
+,则|A|=3-(-2)=5,
+A*=
+\begin{bmatrix} 3 & -2 \\ 1 & 1 \end{bmatrix}\\
+A^{-1}= \frac{1}{5}A*</script><hr>
+<h2 id="三、可逆矩阵"><a href="#三、可逆矩阵" class="headerlink" title="三、可逆矩阵"></a>三、可逆矩阵</h2><blockquote>
+<p>对于$n$阶矩阵A，如果存在n阶矩阵B，使得$AB=BA=E$,则称矩阵A是可逆的，称B为A的逆矩阵，记作$A^{-1}=B$</p>
+</blockquote>
+<p>定理： </p>
+<ul>
+<li>若A可逆，则A的逆矩阵唯一。</li>
+<li>A可逆$\Leftrightarrow |A| \neq 0$ </li>
+<li>设A和B为n阶矩阵且$AB=E$,则$BA=E$</li>
+</ul>
+<p>逆矩阵的运算性质</p>
+<p><img src="https://i.loli.net/2021/03/24/KDzBQt21LH3sTES.png" alt="image-20210324224120395"></p>
+<hr>
+<h2 id="四、求逆矩阵"><a href="#四、求逆矩阵" class="headerlink" title="四、求逆矩阵"></a>四、求逆矩阵</h2><p><img src="https://i.loli.net/2021/03/24/LfT2PEnUj6mrZHS.png" alt="image-20210324225302181"> </p>
+<hr>
+<h2 id="五、分块矩阵的运算"><a href="#五、分块矩阵的运算" class="headerlink" title="五、分块矩阵的运算"></a>五、分块矩阵的运算</h2><ol>
+<li>加法</li>
+</ol>
+<script type="math/tex; mode=display">
+\begin{bmatrix} A_1 & A_2 \\ A_3 & A_4 \end{bmatrix}+
+\begin{bmatrix} B_1 & B_2 \\ B_3 & B_4 \end{bmatrix}=
+\begin{bmatrix} A_1+B_1 & A_2+B_2 \\ A_3+B_3 & A_4+B_4 \end{bmatrix}</script><pre><code>2. 乘法
+</code></pre><script type="math/tex; mode=display">
+\begin{bmatrix} A_1 & A_2 \\ A_3 & A_4 \end{bmatrix}
+\begin{bmatrix} B_1 & B_2 \\ B_3 & B_4 \end{bmatrix}=
+\begin{bmatrix} A_1B_1+A_2B_3 & A_1B_2+A_2B_4 \\ A_3B_1+A_4B_3 & A_3B_2+A_4B_4 \end{bmatrix}</script><pre><code>3. 转置
+</code></pre><script type="math/tex; mode=display">
+\begin{bmatrix} A & B \\ C & D \end{bmatrix}^{T}=
+\begin{bmatrix} A^{T} & C^T \\ B^T &D^T\end{bmatrix}</script><pre><code>4. $n$次方 
+</code></pre><script type="math/tex; mode=display">
+\begin{bmatrix} A & 0 \\ 0 & B \end{bmatrix}^n=
+\begin{bmatrix} A^n & 0 \\ 0 & B^n \end{bmatrix}</script><p>​    5. 逆矩阵    </p>
+<script type="math/tex; mode=display">
+\begin{bmatrix} A & 0 \\ 0 & B \end{bmatrix}^{-1}=
+\begin{bmatrix} A^{-1} & 0 \\ 0 & B^{-1} \end{bmatrix}</script><script type="math/tex; mode=display">
+\begin{bmatrix} 0 & A \\ B & 0 \end{bmatrix}^{-1}=
+\begin{bmatrix} 0 & B^{-1} \\ A^{-1} & 0 \end{bmatrix}</script>]]></content>
+      <categories>
+        <category>线代</category>
+      </categories>
+      <tags>
+        <tag>线代</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>矩阵</title>
     <url>/2021/03/23/xd2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
@@ -416,79 +489,6 @@ D=
 <hr>
 <h2 id="四、克拉默法则"><a href="#四、克拉默法则" class="headerlink" title="四、克拉默法则"></a>四、克拉默法则</h2><p><img src="https://i.loli.net/2021/03/23/PIeroQLJaAFGZDn.png" alt="image-20210323230740265"></p>
 ]]></content>
-      <categories>
-        <category>线代</category>
-      </categories>
-      <tags>
-        <tag>线代</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>可逆矩阵</title>
-    <url>/2021/03/24/xd4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
-<hr>
-<h2 id="一、方阵的行列式"><a href="#一、方阵的行列式" class="headerlink" title="一、方阵的行列式"></a>一、方阵的行列式</h2><blockquote>
-<p>设$A=[a_{ij}]$为$n$阶矩阵。其所有元素所构成的行列式称为方阵$A$的行列式，记为$|A|$</p>
-</blockquote>
-<span id="more"></span>
-<p>tips:</p>
-<ol>
-<li><p>只有方阵才有行列式$A$</p>
-</li>
-<li><p>$A=0$和$|A|=0$不要混</p>
-<p><img src="https://i.loli.net/2021/03/24/jtH5nJlC7orEdQv.png" alt="image-20210324215634667"></p>
-</li>
-</ol>
-<p>方阵行列式公式:</p>
-<p><img src="https://i.loli.net/2021/03/28/Nm1OAEkMasvrXo3.png" alt="image-20210328113835852"></p>
-<hr>
-<h2 id="二、伴随矩阵"><a href="#二、伴随矩阵" class="headerlink" title="二、伴随矩阵"></a>二、伴随矩阵</h2><p><img src="https://i.loli.net/2021/03/24/92AhxGQozslTBMg.png" alt="image-20210324222507399"></p>
-<p><img src="https://i.loli.net/2021/03/24/dMLFBK12PryOR9X.png" alt="image-20210324222615805"></p>
-<p><font color =red>tips:二阶方阵的伴随矩阵：主对角线互换，副对角线变号</font></p>
-<script type="math/tex; mode=display">
-A=
-\begin{bmatrix} 1 & 2 \\ -1 & 3 \end{bmatrix}
-,则|A|=3-(-2)=5,
-A*=
-\begin{bmatrix} 3 & -2 \\ 1 & 1 \end{bmatrix}\\
-A^{-1}= \frac{1}{5}A*</script><hr>
-<h2 id="三、可逆矩阵"><a href="#三、可逆矩阵" class="headerlink" title="三、可逆矩阵"></a>三、可逆矩阵</h2><blockquote>
-<p>对于$n$阶矩阵A，如果存在n阶矩阵B，使得$AB=BA=E$,则称矩阵A是可逆的，称B为A的逆矩阵，记作$A^{-1}=B$</p>
-</blockquote>
-<p>定理： </p>
-<ul>
-<li>若A可逆，则A的逆矩阵唯一。</li>
-<li>A可逆$\Leftrightarrow |A| \neq 0$ </li>
-<li>设A和B为n阶矩阵且$AB=E$,则$BA=E$</li>
-</ul>
-<p>逆矩阵的运算性质</p>
-<p><img src="https://i.loli.net/2021/03/24/KDzBQt21LH3sTES.png" alt="image-20210324224120395"></p>
-<hr>
-<h2 id="四、求逆矩阵"><a href="#四、求逆矩阵" class="headerlink" title="四、求逆矩阵"></a>四、求逆矩阵</h2><p><img src="https://i.loli.net/2021/03/24/LfT2PEnUj6mrZHS.png" alt="image-20210324225302181"> </p>
-<hr>
-<h2 id="五、分块矩阵的运算"><a href="#五、分块矩阵的运算" class="headerlink" title="五、分块矩阵的运算"></a>五、分块矩阵的运算</h2><ol>
-<li>加法</li>
-</ol>
-<script type="math/tex; mode=display">
-\begin{bmatrix} A_1 & A_2 \\ A_3 & A_4 \end{bmatrix}+
-\begin{bmatrix} B_1 & B_2 \\ B_3 & B_4 \end{bmatrix}=
-\begin{bmatrix} A_1+B_1 & A_2+B_2 \\ A_3+B_3 & A_4+B_4 \end{bmatrix}</script><pre><code>2. 乘法
-</code></pre><script type="math/tex; mode=display">
-\begin{bmatrix} A_1 & A_2 \\ A_3 & A_4 \end{bmatrix}
-\begin{bmatrix} B_1 & B_2 \\ B_3 & B_4 \end{bmatrix}=
-\begin{bmatrix} A_1B_1+A_2B_3 & A_1B_2+A_2B_4 \\ A_3B_1+A_4B_3 & A_3B_2+A_4B_4 \end{bmatrix}</script><pre><code>3. 转置
-</code></pre><script type="math/tex; mode=display">
-\begin{bmatrix} A & B \\ C & D \end{bmatrix}^{T}=
-\begin{bmatrix} A^{T} & C^T \\ B^T &D^T\end{bmatrix}</script><pre><code>4. $n$次方 
-</code></pre><script type="math/tex; mode=display">
-\begin{bmatrix} A & 0 \\ 0 & B \end{bmatrix}^n=
-\begin{bmatrix} A^n & 0 \\ 0 & B^n \end{bmatrix}</script><p>​    5. 逆矩阵    </p>
-<script type="math/tex; mode=display">
-\begin{bmatrix} A & 0 \\ 0 & B \end{bmatrix}^{-1}=
-\begin{bmatrix} A^{-1} & 0 \\ 0 & B^{-1} \end{bmatrix}</script><script type="math/tex; mode=display">
-\begin{bmatrix} 0 & A \\ B & 0 \end{bmatrix}^{-1}=
-\begin{bmatrix} 0 & B^{-1} \\ A^{-1} & 0 \end{bmatrix}</script>]]></content>
       <categories>
         <category>线代</category>
       </categories>
@@ -643,6 +643,96 @@ x_2+2x_3=2
       </tags>
   </entry>
   <entry>
+    <title>HOG特征提取</title>
+    <url>/2021/04/02/xd6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="原文链接：戳这里！"><a href="#原文链接：戳这里！" class="headerlink" title="原文链接：戳这里！"></a>原文链接：<a href="https://zhuanlan.zhihu.com/p/85829145">戳这里！</a></h3><h2 id="HOG"><a href="#HOG" class="headerlink" title="HOG"></a>HOG</h2><h2 id="前言：特征描述符"><a href="#前言：特征描述符" class="headerlink" title="前言：特征描述符"></a>前言：特征描述符</h2><p>特征描述符就是通过提取图像的有用信息，并且丢弃无关信息来简化图像的表示。</p>
+<p>HOG特征描述符可以将3通道的彩色图像转换成一定长度的特征向量。</p>
+<span id="more"></span>
+<div class="admonition info"><p class="admonition-title">Info</p><p>什么是有用信息，什么是无用信息？</p>
+</div>
+
+<p>这里的“有用”，是指对于什么目的有用，显然特征向量对于观察图像是没有用的，但是它对于像图像识别和目标检测这样的任务非常有用。当将这些特征向量输入到类似支持向量机($svm$)这样的图像分类算法中时，会得到较好的结果。</p>
+<p>那什么样的“特征”对分类任务是有用，比如我们想检测出马路上的车道线，那么我们可以通过边缘检测来找到这些车道线，在这种情况下，边缘信息就是“有用的”，而颜色信息是无关的。</p>
+<p><strong>在HOG特征描述符中，梯度方向的分布，也就是梯度方向的直方图被视作特征。图像的梯度(x和y的导数)非常有用，因为边缘和拐角周围幅度梯度很大，并且边缘和拐角比平坦区域包含更多关于物体形状的信息。</strong></p>
+<p>方向梯度直方图(HOG)特征描述符常和线性支持向量机(SVM)配合使用，用于训练高精度的目标分类器。</p>
+<h2 id="一、计算图像的方向梯度直方图-HOG-步骤"><a href="#一、计算图像的方向梯度直方图-HOG-步骤" class="headerlink" title="一、计算图像的方向梯度直方图(HOG)步骤"></a>一、计算图像的方向梯度直方图(HOG)步骤</h2><p>以下图为例子：</p>
+<p><img src="https://i.loli.net/2021/04/21/FPhj3Xx5ftzdSH1.png" alt="image-20210421193206285"></p>
+<h3 id="1-图像预处理"><a href="#1-图像预处理" class="headerlink" title="1. 图像预处理"></a>1. <strong>图像预处理</strong></h3><ul>
+<li><p>对图像进行裁剪，缩放到固定的尺寸。</p>
+</li>
+<li><p>灰度处理是可选操作，灰度图像和彩色图像都可以用于计算梯度图。对于彩色图像，先对三通道颜色值分别计算梯度，然后取梯度值最大的作为该像素的梯度。</p>
+</li>
+<li><p>进行伽马矫正，调节图像对比度来减少光照对图像的影响(包括光照不均和局部阴影)，使过曝或者欠曝的图像恢复正常。</p>
+</li>
+<li><p>附：伽马矫正公式</p>
+<script type="math/tex; mode=display">
+f(x)= {x}^{\gamma}</script><p>即输出图像是输入图像的幂函数，指数为$\gamma$  。</p>
+<p>代码如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;a.jpg&#x27;</span>)</span><br><span class="line">gamma = [<span class="number">0.1</span>,<span class="number">0.5</span>,<span class="number">5.0</span>,<span class="number">10.0</span>]</span><br><span class="line">plt.figure(figsize = (<span class="number">15</span>,<span class="number">15</span>))</span><br><span class="line"><span class="keyword">for</span> idx,i <span class="keyword">in</span> <span class="built_in">enumerate</span>(gamma):</span><br><span class="line">    plt.subplot(<span class="number">221</span>+idx)</span><br><span class="line">    plt.title(<span class="string">&quot;gamma:%s&quot;</span>%<span class="built_in">str</span>(i))</span><br><span class="line">    img2 = np.power(img/<span class="built_in">float</span>(np.<span class="built_in">max</span>(img)),i)</span><br><span class="line">    plt.imshow(img2)</span><br><span class="line">    </span><br><span class="line">plt.savefig(<span class="string">&#x27;b.jpg&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>$\gamma$越大，图像越暗，为1不变。</p>
+<p><img src="https://i.loli.net/2021/04/21/YH7N34q8yMSuacb.jpg" alt="b"></p>
+</li>
+</ul>
+<h3 id="2-计算梯度图"><a href="#2-计算梯度图" class="headerlink" title="2. 计算梯度图"></a>2. <strong>计算梯度图</strong></h3><p>为了得到梯度直方图，首先需要计算水平和垂直梯度，这可以通过使用一下内核过滤图像来实现，分别用于计算水平梯度和垂直梯度。</p>
+<p><img src="https://i.loli.net/2021/04/21/GJnaviMFR6p53fP.png" alt="image-20210421200805443"></p>
+<p>之后再计算$x$和$y$方向的梯度，包括幅值和方向：</p>
+<script type="math/tex; mode=display">
+g = \sqrt(g^2_{x}+g^2_y)\\
+\theta = arctan{\frac{g_y}{g_x}}</script><div class="admonition warning"><p class="admonition-title">Warning</p><p>注意梯度方向会取绝对值，因此得到的角度范围为0-180。</p>
+</div>
+
+<p>代码如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">&#x27;a.jpg&#x27;</span>)</span><br><span class="line"><span class="comment">#归一化</span></span><br><span class="line">img = np.float32(img) / <span class="number">255.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#计算x和y方向上的梯度</span></span><br><span class="line">gx = cv2.Sobel(img, cv2.CV_32F, <span class="number">1</span>, <span class="number">0</span>, ksize = <span class="number">1</span>)</span><br><span class="line">gy = cv2.Sobel(img, cv2.CV_32F, <span class="number">0</span>, <span class="number">1</span>, ksize = <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算合梯度的方向和幅值</span></span><br><span class="line">mag, angle = cv2.cartToPolar(gx, gy, angleInDegrees=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/21/57X9ONGr2YqHwFL.jpg" alt="c"></p>
+<h3 id="3-计算梯度直方图"><a href="#3-计算梯度直方图" class="headerlink" title="3. 计算梯度直方图"></a>3. <strong>计算梯度直方图</strong></h3><p>在这一步，我们先将整个图像划分为若干个8X8的小单元，称作cell，计算每个cell的梯度直方图。这个cell的尺寸也可以是其他值，根据具体特征而定。</p>
+<div class="admonition attention"><p class="admonition-title">Attention</p><p>为什么我们要将图像分为若干个8X8的小单元？</p>
+</div>
+
+<p>因为一整张梯度图，其中的有效特征是非常稀疏的，不但运算量大，而且效果可能不好。于是我们用特征描述符来表示更紧凑的特征。一个8X8的小单元就包含了8X8X2=128个值(每个像素点包括梯度大小和梯度方向)。</p>
+<p>现在将这8X8的小单元用长度为9的数组来表示，这个数组就是梯度直方图。</p>
+<div class="admonition attention"><p class="admonition-title"> 为什么是长度为9的数组呢？
+</p><p>因为梯度方向范围是0-180，将角度范围分为9份，每20°为一bins，<strong>将每一份中所有像素的梯度值进行累加</strong>（注意不是角度范围内像素的个数），得到9个数值。直方图就是由这9个数值所组成的数组，对应角度0°、20°、40°…160°</p>
+</div>
+
+<p><img src="https://i.loli.net/2021/04/21/c5HBGowzRFshCMQ.png" alt="image-20210421205314930"></p>
+<p>比如上面方向图中蓝圈包围的像素，角度为80度，这个像素对应的幅值为2，所以在直方图80度对应的bin加上2。红圈包围的像素，角度为10度，介于0度和20度之间，其幅值为4，那么这个梯度值就被按比例分给0度和20度对应的bin，也就是各加上2。</p>
+<div class="admonition warning"><p class="admonition-title">Warning</p><p>还有一个细节需要注意，如果某个像素的梯度角度大于160度，也就是在160度到180度之间，那么把这个像素对应的梯度值按比例分给0度和160度对应的bin。</p>
+</div>
+
+<p>现在我们就可以用这9个数的梯度直方图来代替原来很大的三维矩阵，即代替了8x8x2个值。</p>
+<p>这种表示法不仅使特征更紧凑，而且对单个像素值的变化不敏感，也就是能够抗噪声干扰。</p>
+<h3 id="4-Block归一化"><a href="#4-Block归一化" class="headerlink" title="4. Block归一化"></a>4. <strong>Block归一化</strong></h3><p>上一步中将8X8的区域做为一个cell，接着再以2X2个cell做为一组，称为block。由于每个cell有9个值，所以2X2个cell有36个值。HOG通过滑动窗口的方式来获得Block。</p>
+<p>在第三步中，我们对每个cell创建了一个直方图，但是图像的梯度直方图对整体光照非常敏感，比如通过将所有像素值除以2来使图像变暗，那么梯度幅值将减小一半，因此直方图中的值也将减少一半。如果希望我们的特征描述符不会受到光照变化的影响，那么我们就需要将直方图归一化。</p>
+<p>首先，以长度为3的向量为例：假设我们有一个向量 <code>[128,64,32]</code>，向量的长度为  </p>
+<script type="math/tex; mode=display">
+\sqrt{128^2+64^2+32^2}=146.64</script><p>这叫做向量的L2范数。将这个向量的每个元素除以146.64就得到了归一化向量 <code>[0.87, 0.43, 0.22]</code>。</p>
+<p>现在有一个新向量，是第一个向量的2倍<code>[128x2, 64x2, 32x2]</code>，也就是 <code>[256, 128, 64]</code>，我们将这个向量进行归一化，你可以看到归一化后的结果与第一个向量归一化后的结果相同。所以，对向量进行归一化可以消除整体光照的影响。</p>
+<p>知道了如何归一化，现在来对block的梯度直方图进行归一化（注意不是cell），一个block有4个直方图，将这4个直方图拼接成长度为36的向量，然后对这个向量进行归一化。</p>
+<p>因为使用的是滑动窗口，滑动步长为8个像素(即一个cell)，所以每滑动一次，就在这个窗口上进行归一化计算得到长度为36的向量，并重复这个过程。</p>
+<h3 id="5-计算HOG特征向量"><a href="#5-计算HOG特征向量" class="headerlink" title="5. 计算HOG特征向量"></a>5. <strong>计算HOG特征向量</strong></h3><p>最后计算真个图像的特征描述符，每滑动一次就得到一个长度为36的特征向量。那么总共有多少特征向量呢？</p>
+<p>比如上面这个图，将整幅图像划分成cell的个数为8x16，就是横向有8个cell，纵向有16个cell。每个block有2x2个cell的话，那么cell的个数为：(16-1)x(8-1)=105。即有7个水平block和15个竖直block。</p>
+<p>再将这105个block合并，就得到了整个图像的特征描述符，长度为 105×36=3780。</p>
+<h3 id="6-HOG可视化"><a href="#6-HOG可视化" class="headerlink" title="6. HOG可视化"></a>6. HOG可视化</h3><p>使用Python库skimage</p>
+<p>代码如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> skimage <span class="keyword">import</span> feature, exposure</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line">image = cv2.imread(<span class="string">&#x27;a.jpg&#x27;</span>)</span><br><span class="line">fd, hog_image = feature.hog(image, orientations=<span class="number">9</span>, pixels_per_cell=(<span class="number">16</span>, <span class="number">16</span>),cells_per_block=(<span class="number">2</span>, <span class="number">2</span>), visualize=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># Rescale histogram for better display</span></span><br><span class="line">hog_image_rescaled = exposure.rescale_intensity(hog_image, in_range=(<span class="number">0</span>, <span class="number">10</span>))</span><br><span class="line"></span><br><span class="line">cv2.imshow(<span class="string">&#x27;img&#x27;</span>, image)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;hog&#x27;</span>, hog_image_rescaled)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/21/N3IzwclpEM8iZ6r.png" alt="image-20210421213911095"></p>
+<p>这里最关键的函数就是 feature.hog，关键参数如下：</p>
+<ul>
+<li>image : 可以是灰度图或者彩色图</li>
+<li>orientations : 把180度分成几份，也就是bin的数量</li>
+<li>pixels_per_cell : 一个cell中的像素数目</li>
+<li>cells_per_block : 一个block中包含的cell个数</li>
+<li>visualize : 是否返回一个hog图像用于显示。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机视觉</category>
+      </categories>
+      <tags>
+        <tag>hog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo警示框插件</title>
     <url>/2021/04/04/xj-1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
@@ -660,20 +750,6 @@ x_2+2x_3=2
 ]]></content>
       <tags>
         <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>用初等行变换求逆矩阵、秩的概念</title>
-    <url>/2021/03/28/xd6/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
-<hr>
-<p>Nothing……</p>
-]]></content>
-      <categories>
-        <category>线代</category>
-      </categories>
-      <tags>
-        <tag>线代</tag>
       </tags>
   </entry>
 </search>
