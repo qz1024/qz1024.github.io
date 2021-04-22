@@ -6,7 +6,7 @@
   <link href="http://qz1024.github.io/atom.xml" rel="self"/>
   
   <link href="http://qz1024.github.io/"/>
-  <updated>2021-04-04T18:02:14.181Z</updated>
+  <updated>2021-04-22T14:28:08.522Z</updated>
   <id>http://qz1024.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>图像卷积、边缘提取和滤波去噪</title>
+    <link href="http://qz1024.github.io/2021/04/22/sz/"/>
+    <id>http://qz1024.github.io/2021/04/22/sz/</id>
+    <published>2021-04-22T12:44:23.000Z</published>
+    <updated>2021-04-22T14:28:08.522Z</updated>
+    
+    
+    <summary type="html">&lt;hr&gt;
+&lt;h2 id=&quot;一、-图像卷积&quot;&gt;&lt;a href=&quot;#一、-图像卷积&quot; class=&quot;headerlink&quot; title=&quot;一、 图像卷积&quot;&gt;&lt;/a&gt;一、 图像卷积&lt;/h2&gt;&lt;p&gt;现在有一张图片 $f(x,y)$和一个kernel核w(a,b).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;卷积： 卷积运算就是对于图像$f(x,y)$中的每个像素，将其做为中心像素，计算它及其邻域像素和kernel核w(a,b)对应位置元素的乘积，然后把结果相加到一起，得到的值就做为该中心元素的新值，这样就完成了一起卷积运算。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然后就将kernel向下或者向右平移一位继续计算每个像素的新值，直到遍历整个图像。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="计算机视觉" scheme="http://qz1024.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    
+    
+    <category term="卷积" scheme="http://qz1024.github.io/tags/%E5%8D%B7%E7%A7%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo警示框插件</title>
