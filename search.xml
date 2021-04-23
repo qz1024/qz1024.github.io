@@ -58,155 +58,10 @@ C_{n-1}^{k}</script></li>
       </tags>
   </entry>
   <entry>
-    <title>行列式概念</title>
-    <url>/2021/03/21/post/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
-<h2 id="一、二三阶行列式"><a href="#一、二三阶行列式" class="headerlink" title="一、二三阶行列式"></a>一、二三阶行列式</h2><h3 id="1-二阶行列式定义"><a href="#1-二阶行列式定义" class="headerlink" title="1. 二阶行列式定义"></a>1. 二阶行列式定义</h3><script type="math/tex; mode=display">
-\left|
-\begin{array}
-{ccc}
-a&&b\\
-c&&d
-\end{array}
-\right|
-=ad-bc</script><p>同时从左上到右下称为<strong>主对角线</strong>，左下到右上称为<strong>副对角线</strong>。</p>
-<span id="more"></span>
-<h3 id="2-代入一元二次方程组"><a href="#2-代入一元二次方程组" class="headerlink" title="2. 代入一元二次方程组"></a>2. 代入一元二次方程组</h3><p>对于一元二次方程组：</p>
-<script type="math/tex; mode=display">
-\begin{cases}
-a_1x+b_1y=c_1\\
-a_2x+b_2y=c_2
-\end{cases}</script><p>通过加减消元，我们可以得到：</p>
-<script type="math/tex; mode=display">
-(a_1b_2-a_2b_1)x=c_1b_2-c_2b_1\\
-(a_2b_1-a_1b_2)y=c_1a_2-c_2a_1</script><p>如果系数行列式</p>
-<script type="math/tex; mode=display">
-\left|
-\begin{array}
-{ccc}
-a_1&&b_1\\
-a_2&&b_2
-\end{array}
-\right|
-=a_1b_2-a_2b_1\neq0</script><p>则方程组有唯一解，即：</p>
-<script type="math/tex; mode=display">
-\begin{cases}
-x=
-\frac
-{\left|
-\begin{array}
-{ccc}
-c_1&&b_1\\
-c_2&&b_2
-\end{array}
-\right|}
-{\left|
-\begin{array}
-{ccc}
-a_1&&b_1\\
-a_2&&b_2
-\end{array}
-\right|}\\
-y=
-\frac
-{\left|
-\begin{array}
-{ccc}
-a_1&&c_1\\
-a_2&&c_2
-\end{array}
-\right|}
-{\left|
-\begin{array}
-{ccc}
-a_1&&b_1\\
-a_2&&b_2
-\end{array}
-\right|}
-\end{cases}</script><p>例：解下列方程组：</p>
-<script type="math/tex; mode=display">
-\begin{cases}
-3x+2y=5\\
-5x-7y=29
-\end{cases}</script><blockquote>
-<p>解：由于系数行列式</p>
-<script type="math/tex; mode=display">
-\left|
-\begin{array}
-{ccc}
-3&&2\\5&&-7
-\end{array}
-\right|
-=-21-10=-31\neq0</script><p>所以方程组有唯一解</p>
-<p>所以：</p>
-<script type="math/tex; mode=display">
-x=
-\frac
-{\left|
-\begin{array}
-{ccc}
-5&&2\\29&&-7
-\end{array}
-\right|}
-{-31}=3,
-y=
-\frac
-{\left|
-\begin{array}
-{ccc}
-3&&5\\5&&29
-\end{array}
-\right|}
-{-31}=-2</script></blockquote>
-<h3 id="3-三阶行列式"><a href="#3-三阶行列式" class="headerlink" title="3. 三阶行列式"></a>3. 三阶行列式</h3><script type="math/tex; mode=display">
-\left|
-\begin{array}
-{ccc}
-a_{11}&&a_{12}&&a_{13}\\
-a_{21}&&a_{22}&&a_{23}\\
-a_{31}&&a_{32}&&a_{33}
-\end{array}
-\right|=\\a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{21}a_{32}-\\a_{13}a_{22}a_{31}-a_{12}a_{21}a_{33}-a_{11}a_{
-23}a_{32}</script><font color=red>不同行不同列元素乘积的代数和</font>
-
-
-
-<hr>
-<h2 id="二、排列、逆序、逆序数"><a href="#二、排列、逆序、逆序数" class="headerlink" title="二、排列、逆序、逆序数"></a>二、排列、逆序、逆序数</h2><h3 id="1-排列"><a href="#1-排列" class="headerlink" title="1. 排列"></a>1. 排列</h3><blockquote>
-<p>排列：由1,2,···,n组成的有序数组称为一个 <strong>n</strong> 阶排列。通常用 $j_1,j_2,j_3,···,j_n$表示 <strong>n</strong>阶排列。</p>
-<p>自然排列：从1到n从小到大顺序排列成为自然排列。</p>
-</blockquote>
-<p>例： 2    4     1    3    ：4阶排列</p>
-<p>​        1    3    5    4    2    ：5阶排列</p>
-<h3 id="2-逆序与逆序数"><a href="#2-逆序与逆序数" class="headerlink" title="2. 逆序与逆序数"></a>2. 逆序与逆序数</h3><blockquote>
-<p>逆序：在一个排列中，如果一个大的数排在一个小的数前面，就称这两个数构成一个逆序。</p>
-<p>逆序数：一个排列中逆序的总数为这个排列的逆序数。用$\tau(j_1,j_2,···,j_n)$表示相关排列的逆序数。</p>
-<p>偶排列：如果一个排列的逆序数为偶数，则称这个排列为偶排列</p>
-<p>奇排列：如果一个排列的逆序数为奇数，则称这个排列为奇排列</p>
-</blockquote>
-<p>例：$\tau(1\,3\,2)=0+1=1$</p>
-<p>​        $\tau(2\,4\,3\,1)=1+2+1=4$</p>
-<h3 id="3-定理"><a href="#3-定理" class="headerlink" title="3.定理"></a>3.定理</h3><ul>
-<li>对换改变排列的奇偶性</li>
-<li>任意一个$n$阶排列可经过一系列兑换变成自然排列</li>
-<li>在所有的$n$阶排列中，奇偶排列各占一半</li>
-</ul>
-<hr>
-<h2 id="三、n阶行列式概念"><a href="#三、n阶行列式概念" class="headerlink" title="三、n阶行列式概念"></a>三、n阶行列式概念</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h3><p><img src="https://i.loli.net/2021/03/21/rpPKtdU9Tsq1vRk.png" alt="定义"></p>
-<p>完全展开式有$n!$项。</p>
-]]></content>
-      <categories>
-        <category>线代</category>
-      </categories>
-      <tags>
-        <tag>线代</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>图像卷积、边缘提取和滤波去噪</title>
     <url>/2021/04/22/sz/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
-<h2 id="一、-图像卷积"><a href="#一、-图像卷积" class="headerlink" title="一、 图像卷积"></a>一、 图像卷积</h2><p>现在有一张图片 $f(x,y)$和一个kernel核w(a,b).</p>
+<h2 id="原文链接：戳这里！"><a href="#原文链接：戳这里！" class="headerlink" title="原文链接：戳这里！"></a><code>原文链接</code>：<a href="https://zhuanlan.zhihu.com/p/67197912">戳这里！</a></h2><h2 id="一、-图像卷积"><a href="#一、-图像卷积" class="headerlink" title="一、 图像卷积"></a>一、 图像卷积</h2><p>现在有一张图片 $f(x,y)$和一个kernel核w(a,b).</p>
 <blockquote>
 <p>卷积： 卷积运算就是对于图像$f(x,y)$中的每个像素，将其做为中心像素，计算它及其邻域像素和kernel核w(a,b)对应位置元素的乘积，然后把结果相加到一起，得到的值就做为该中心元素的新值，这样就完成了一起卷积运算。</p>
 </blockquote>
@@ -397,6 +252,151 @@ G(x,y)=\frac{1}{2Π \alpha^2}e^{- \frac{x^2+y^2}{2\alpha^2}}</script><p>下图�
       </categories>
       <tags>
         <tag>卷积</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>行列式概念</title>
+    <url>/2021/03/21/post/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
+<h2 id="一、二三阶行列式"><a href="#一、二三阶行列式" class="headerlink" title="一、二三阶行列式"></a>一、二三阶行列式</h2><h3 id="1-二阶行列式定义"><a href="#1-二阶行列式定义" class="headerlink" title="1. 二阶行列式定义"></a>1. 二阶行列式定义</h3><script type="math/tex; mode=display">
+\left|
+\begin{array}
+{ccc}
+a&&b\\
+c&&d
+\end{array}
+\right|
+=ad-bc</script><p>同时从左上到右下称为<strong>主对角线</strong>，左下到右上称为<strong>副对角线</strong>。</p>
+<span id="more"></span>
+<h3 id="2-代入一元二次方程组"><a href="#2-代入一元二次方程组" class="headerlink" title="2. 代入一元二次方程组"></a>2. 代入一元二次方程组</h3><p>对于一元二次方程组：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+a_1x+b_1y=c_1\\
+a_2x+b_2y=c_2
+\end{cases}</script><p>通过加减消元，我们可以得到：</p>
+<script type="math/tex; mode=display">
+(a_1b_2-a_2b_1)x=c_1b_2-c_2b_1\\
+(a_2b_1-a_1b_2)y=c_1a_2-c_2a_1</script><p>如果系数行列式</p>
+<script type="math/tex; mode=display">
+\left|
+\begin{array}
+{ccc}
+a_1&&b_1\\
+a_2&&b_2
+\end{array}
+\right|
+=a_1b_2-a_2b_1\neq0</script><p>则方程组有唯一解，即：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+x=
+\frac
+{\left|
+\begin{array}
+{ccc}
+c_1&&b_1\\
+c_2&&b_2
+\end{array}
+\right|}
+{\left|
+\begin{array}
+{ccc}
+a_1&&b_1\\
+a_2&&b_2
+\end{array}
+\right|}\\
+y=
+\frac
+{\left|
+\begin{array}
+{ccc}
+a_1&&c_1\\
+a_2&&c_2
+\end{array}
+\right|}
+{\left|
+\begin{array}
+{ccc}
+a_1&&b_1\\
+a_2&&b_2
+\end{array}
+\right|}
+\end{cases}</script><p>例：解下列方程组：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+3x+2y=5\\
+5x-7y=29
+\end{cases}</script><blockquote>
+<p>解：由于系数行列式</p>
+<script type="math/tex; mode=display">
+\left|
+\begin{array}
+{ccc}
+3&&2\\5&&-7
+\end{array}
+\right|
+=-21-10=-31\neq0</script><p>所以方程组有唯一解</p>
+<p>所以：</p>
+<script type="math/tex; mode=display">
+x=
+\frac
+{\left|
+\begin{array}
+{ccc}
+5&&2\\29&&-7
+\end{array}
+\right|}
+{-31}=3,
+y=
+\frac
+{\left|
+\begin{array}
+{ccc}
+3&&5\\5&&29
+\end{array}
+\right|}
+{-31}=-2</script></blockquote>
+<h3 id="3-三阶行列式"><a href="#3-三阶行列式" class="headerlink" title="3. 三阶行列式"></a>3. 三阶行列式</h3><script type="math/tex; mode=display">
+\left|
+\begin{array}
+{ccc}
+a_{11}&&a_{12}&&a_{13}\\
+a_{21}&&a_{22}&&a_{23}\\
+a_{31}&&a_{32}&&a_{33}
+\end{array}
+\right|=\\a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{21}a_{32}-\\a_{13}a_{22}a_{31}-a_{12}a_{21}a_{33}-a_{11}a_{
+23}a_{32}</script><font color=red>不同行不同列元素乘积的代数和</font>
+
+
+
+<hr>
+<h2 id="二、排列、逆序、逆序数"><a href="#二、排列、逆序、逆序数" class="headerlink" title="二、排列、逆序、逆序数"></a>二、排列、逆序、逆序数</h2><h3 id="1-排列"><a href="#1-排列" class="headerlink" title="1. 排列"></a>1. 排列</h3><blockquote>
+<p>排列：由1,2,···,n组成的有序数组称为一个 <strong>n</strong> 阶排列。通常用 $j_1,j_2,j_3,···,j_n$表示 <strong>n</strong>阶排列。</p>
+<p>自然排列：从1到n从小到大顺序排列成为自然排列。</p>
+</blockquote>
+<p>例： 2    4     1    3    ：4阶排列</p>
+<p>​        1    3    5    4    2    ：5阶排列</p>
+<h3 id="2-逆序与逆序数"><a href="#2-逆序与逆序数" class="headerlink" title="2. 逆序与逆序数"></a>2. 逆序与逆序数</h3><blockquote>
+<p>逆序：在一个排列中，如果一个大的数排在一个小的数前面，就称这两个数构成一个逆序。</p>
+<p>逆序数：一个排列中逆序的总数为这个排列的逆序数。用$\tau(j_1,j_2,···,j_n)$表示相关排列的逆序数。</p>
+<p>偶排列：如果一个排列的逆序数为偶数，则称这个排列为偶排列</p>
+<p>奇排列：如果一个排列的逆序数为奇数，则称这个排列为奇排列</p>
+</blockquote>
+<p>例：$\tau(1\,3\,2)=0+1=1$</p>
+<p>​        $\tau(2\,4\,3\,1)=1+2+1=4$</p>
+<h3 id="3-定理"><a href="#3-定理" class="headerlink" title="3.定理"></a>3.定理</h3><ul>
+<li>对换改变排列的奇偶性</li>
+<li>任意一个$n$阶排列可经过一系列兑换变成自然排列</li>
+<li>在所有的$n$阶排列中，奇偶排列各占一半</li>
+</ul>
+<hr>
+<h2 id="三、n阶行列式概念"><a href="#三、n阶行列式概念" class="headerlink" title="三、n阶行列式概念"></a>三、n阶行列式概念</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h3><p><img src="https://i.loli.net/2021/03/21/rpPKtdU9Tsq1vRk.png" alt="定义"></p>
+<p>完全展开式有$n!$项。</p>
+]]></content>
+      <categories>
+        <category>线代</category>
+      </categories>
+      <tags>
+        <tag>线代</tag>
       </tags>
   </entry>
   <entry>
@@ -621,6 +621,79 @@ D=
       </tags>
   </entry>
   <entry>
+    <title>可逆矩阵</title>
+    <url>/2021/03/24/xd4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
+<hr>
+<h2 id="一、方阵的行列式"><a href="#一、方阵的行列式" class="headerlink" title="一、方阵的行列式"></a>一、方阵的行列式</h2><blockquote>
+<p>设$A=[a_{ij}]$为$n$阶矩阵。其所有元素所构成的行列式称为方阵$A$的行列式，记为$|A|$</p>
+</blockquote>
+<span id="more"></span>
+<p>tips:</p>
+<ol>
+<li><p>只有方阵才有行列式$A$</p>
+</li>
+<li><p>$A=0$和$|A|=0$不要混</p>
+<p><img src="https://i.loli.net/2021/03/24/jtH5nJlC7orEdQv.png" alt="image-20210324215634667"></p>
+</li>
+</ol>
+<p>方阵行列式公式:</p>
+<p><img src="https://i.loli.net/2021/03/28/Nm1OAEkMasvrXo3.png" alt="image-20210328113835852"></p>
+<hr>
+<h2 id="二、伴随矩阵"><a href="#二、伴随矩阵" class="headerlink" title="二、伴随矩阵"></a>二、伴随矩阵</h2><p><img src="https://i.loli.net/2021/03/24/92AhxGQozslTBMg.png" alt="image-20210324222507399"></p>
+<p><img src="https://i.loli.net/2021/03/24/dMLFBK12PryOR9X.png" alt="image-20210324222615805"></p>
+<p><font color =red>tips:二阶方阵的伴随矩阵：主对角线互换，副对角线变号</font></p>
+<script type="math/tex; mode=display">
+A=
+\begin{bmatrix} 1 & 2 \\ -1 & 3 \end{bmatrix}
+,则|A|=3-(-2)=5,
+A*=
+\begin{bmatrix} 3 & -2 \\ 1 & 1 \end{bmatrix}\\
+A^{-1}= \frac{1}{5}A*</script><hr>
+<h2 id="三、可逆矩阵"><a href="#三、可逆矩阵" class="headerlink" title="三、可逆矩阵"></a>三、可逆矩阵</h2><blockquote>
+<p>对于$n$阶矩阵A，如果存在n阶矩阵B，使得$AB=BA=E$,则称矩阵A是可逆的，称B为A的逆矩阵，记作$A^{-1}=B$</p>
+</blockquote>
+<p>定理： </p>
+<ul>
+<li>若A可逆，则A的逆矩阵唯一。</li>
+<li>A可逆$\Leftrightarrow |A| \neq 0$ </li>
+<li>设A和B为n阶矩阵且$AB=E$,则$BA=E$</li>
+</ul>
+<p>逆矩阵的运算性质</p>
+<p><img src="https://i.loli.net/2021/03/24/KDzBQt21LH3sTES.png" alt="image-20210324224120395"></p>
+<hr>
+<h2 id="四、求逆矩阵"><a href="#四、求逆矩阵" class="headerlink" title="四、求逆矩阵"></a>四、求逆矩阵</h2><p><img src="https://i.loli.net/2021/03/24/LfT2PEnUj6mrZHS.png" alt="image-20210324225302181"> </p>
+<hr>
+<h2 id="五、分块矩阵的运算"><a href="#五、分块矩阵的运算" class="headerlink" title="五、分块矩阵的运算"></a>五、分块矩阵的运算</h2><ol>
+<li>加法</li>
+</ol>
+<script type="math/tex; mode=display">
+\begin{bmatrix} A_1 & A_2 \\ A_3 & A_4 \end{bmatrix}+
+\begin{bmatrix} B_1 & B_2 \\ B_3 & B_4 \end{bmatrix}=
+\begin{bmatrix} A_1+B_1 & A_2+B_2 \\ A_3+B_3 & A_4+B_4 \end{bmatrix}</script><pre><code>2. 乘法
+</code></pre><script type="math/tex; mode=display">
+\begin{bmatrix} A_1 & A_2 \\ A_3 & A_4 \end{bmatrix}
+\begin{bmatrix} B_1 & B_2 \\ B_3 & B_4 \end{bmatrix}=
+\begin{bmatrix} A_1B_1+A_2B_3 & A_1B_2+A_2B_4 \\ A_3B_1+A_4B_3 & A_3B_2+A_4B_4 \end{bmatrix}</script><pre><code>3. 转置
+</code></pre><script type="math/tex; mode=display">
+\begin{bmatrix} A & B \\ C & D \end{bmatrix}^{T}=
+\begin{bmatrix} A^{T} & C^T \\ B^T &D^T\end{bmatrix}</script><pre><code>4. $n$次方 
+</code></pre><script type="math/tex; mode=display">
+\begin{bmatrix} A & 0 \\ 0 & B \end{bmatrix}^n=
+\begin{bmatrix} A^n & 0 \\ 0 & B^n \end{bmatrix}</script><p>​    5. 逆矩阵    </p>
+<script type="math/tex; mode=display">
+\begin{bmatrix} A & 0 \\ 0 & B \end{bmatrix}^{-1}=
+\begin{bmatrix} A^{-1} & 0 \\ 0 & B^{-1} \end{bmatrix}</script><script type="math/tex; mode=display">
+\begin{bmatrix} 0 & A \\ B & 0 \end{bmatrix}^{-1}=
+\begin{bmatrix} 0 & B^{-1} \\ A^{-1} & 0 \end{bmatrix}</script>]]></content>
+      <categories>
+        <category>线代</category>
+      </categories>
+      <tags>
+        <tag>线代</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>矩阵的初等变换与初等矩阵</title>
     <url>/2021/03/26/xd5/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
@@ -767,76 +840,23 @@ x_2+2x_3=2
       </tags>
   </entry>
   <entry>
-    <title>可逆矩阵</title>
-    <url>/2021/03/24/xd4/</url>
+    <title>hexo警示框插件</title>
+    <url>/2021/04/04/xj-1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
-<hr>
-<h2 id="一、方阵的行列式"><a href="#一、方阵的行列式" class="headerlink" title="一、方阵的行列式"></a>一、方阵的行列式</h2><blockquote>
-<p>设$A=[a_{ij}]$为$n$阶矩阵。其所有元素所构成的行列式称为方阵$A$的行列式，记为$|A|$</p>
-</blockquote>
+<div class="admonition info"><p class="admonition-title"> Hexo-admonition插件地址
+</p><p>戳这里！<a href="https://github.com/lxl80/hexo-admonition">传送门</a></p>
+</div>
+
 <span id="more"></span>
-<p>tips:</p>
-<ol>
-<li><p>只有方阵才有行列式$A$</p>
-</li>
-<li><p>$A=0$和$|A|=0$不要混</p>
-<p><img src="https://i.loli.net/2021/03/24/jtH5nJlC7orEdQv.png" alt="image-20210324215634667"></p>
-</li>
-</ol>
-<p>方阵行列式公式:</p>
-<p><img src="https://i.loli.net/2021/03/28/Nm1OAEkMasvrXo3.png" alt="image-20210328113835852"></p>
-<hr>
-<h2 id="二、伴随矩阵"><a href="#二、伴随矩阵" class="headerlink" title="二、伴随矩阵"></a>二、伴随矩阵</h2><p><img src="https://i.loli.net/2021/03/24/92AhxGQozslTBMg.png" alt="image-20210324222507399"></p>
-<p><img src="https://i.loli.net/2021/03/24/dMLFBK12PryOR9X.png" alt="image-20210324222615805"></p>
-<p><font color =red>tips:二阶方阵的伴随矩阵：主对角线互换，副对角线变号</font></p>
-<script type="math/tex; mode=display">
-A=
-\begin{bmatrix} 1 & 2 \\ -1 & 3 \end{bmatrix}
-,则|A|=3-(-2)=5,
-A*=
-\begin{bmatrix} 3 & -2 \\ 1 & 1 \end{bmatrix}\\
-A^{-1}= \frac{1}{5}A*</script><hr>
-<h2 id="三、可逆矩阵"><a href="#三、可逆矩阵" class="headerlink" title="三、可逆矩阵"></a>三、可逆矩阵</h2><blockquote>
-<p>对于$n$阶矩阵A，如果存在n阶矩阵B，使得$AB=BA=E$,则称矩阵A是可逆的，称B为A的逆矩阵，记作$A^{-1}=B$</p>
-</blockquote>
-<p>定理： </p>
-<ul>
-<li>若A可逆，则A的逆矩阵唯一。</li>
-<li>A可逆$\Leftrightarrow |A| \neq 0$ </li>
-<li>设A和B为n阶矩阵且$AB=E$,则$BA=E$</li>
-</ul>
-<p>逆矩阵的运算性质</p>
-<p><img src="https://i.loli.net/2021/03/24/KDzBQt21LH3sTES.png" alt="image-20210324224120395"></p>
-<hr>
-<h2 id="四、求逆矩阵"><a href="#四、求逆矩阵" class="headerlink" title="四、求逆矩阵"></a>四、求逆矩阵</h2><p><img src="https://i.loli.net/2021/03/24/LfT2PEnUj6mrZHS.png" alt="image-20210324225302181"> </p>
-<hr>
-<h2 id="五、分块矩阵的运算"><a href="#五、分块矩阵的运算" class="headerlink" title="五、分块矩阵的运算"></a>五、分块矩阵的运算</h2><ol>
-<li>加法</li>
-</ol>
-<script type="math/tex; mode=display">
-\begin{bmatrix} A_1 & A_2 \\ A_3 & A_4 \end{bmatrix}+
-\begin{bmatrix} B_1 & B_2 \\ B_3 & B_4 \end{bmatrix}=
-\begin{bmatrix} A_1+B_1 & A_2+B_2 \\ A_3+B_3 & A_4+B_4 \end{bmatrix}</script><pre><code>2. 乘法
-</code></pre><script type="math/tex; mode=display">
-\begin{bmatrix} A_1 & A_2 \\ A_3 & A_4 \end{bmatrix}
-\begin{bmatrix} B_1 & B_2 \\ B_3 & B_4 \end{bmatrix}=
-\begin{bmatrix} A_1B_1+A_2B_3 & A_1B_2+A_2B_4 \\ A_3B_1+A_4B_3 & A_3B_2+A_4B_4 \end{bmatrix}</script><pre><code>3. 转置
-</code></pre><script type="math/tex; mode=display">
-\begin{bmatrix} A & B \\ C & D \end{bmatrix}^{T}=
-\begin{bmatrix} A^{T} & C^T \\ B^T &D^T\end{bmatrix}</script><pre><code>4. $n$次方 
-</code></pre><script type="math/tex; mode=display">
-\begin{bmatrix} A & 0 \\ 0 & B \end{bmatrix}^n=
-\begin{bmatrix} A^n & 0 \\ 0 & B^n \end{bmatrix}</script><p>​    5. 逆矩阵    </p>
-<script type="math/tex; mode=display">
-\begin{bmatrix} A & 0 \\ 0 & B \end{bmatrix}^{-1}=
-\begin{bmatrix} A^{-1} & 0 \\ 0 & B^{-1} \end{bmatrix}</script><script type="math/tex; mode=display">
-\begin{bmatrix} 0 & A \\ B & 0 \end{bmatrix}^{-1}=
-\begin{bmatrix} 0 & B^{-1} \\ A^{-1} & 0 \end{bmatrix}</script>]]></content>
-      <categories>
-        <category>线代</category>
-      </categories>
+<div class="admonition warning"><p class="admonition-title">Warning</p><p>在typora中编辑Markdown时使用 shift+回车，
+使用中文四个空格，不能用Tab或者英文空格</p>
+</div>
+
+<p><img src="https://i.loli.net/2021/04/05/WxldP8HzRBjrMcN.png" alt="image-20210405020009290"></p>
+<p><del>谨以此篇纪念深夜的两个小时</del></p>
+]]></content>
       <tags>
-        <tag>线代</tag>
+        <tag>插件</tag>
       </tags>
   </entry>
   <entry>
@@ -927,26 +947,6 @@ g = \sqrt(g^2_{x}+g^2_y)\\
       </categories>
       <tags>
         <tag>hog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo警示框插件</title>
-    <url>/2021/04/04/xj-1/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
-<div class="admonition info"><p class="admonition-title"> Hexo-admonition插件地址
-</p><p>戳这里！<a href="https://github.com/lxl80/hexo-admonition">传送门</a></p>
-</div>
-
-<span id="more"></span>
-<div class="admonition warning"><p class="admonition-title">Warning</p><p>在typora中编辑Markdown时使用 shift+回车，
-使用中文四个空格，不能用Tab或者英文空格</p>
-</div>
-
-<p><img src="https://i.loli.net/2021/04/05/WxldP8HzRBjrMcN.png" alt="image-20210405020009290"></p>
-<p><del>谨以此篇纪念深夜的两个小时</del></p>
-]]></content>
-      <tags>
-        <tag>插件</tag>
       </tags>
   </entry>
 </search>

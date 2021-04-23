@@ -6,7 +6,7 @@
   <link href="http://qz1024.github.io/atom.xml" rel="self"/>
   
   <link href="http://qz1024.github.io/"/>
-  <updated>2021-04-22T14:28:08.522Z</updated>
+  <updated>2021-04-23T01:26:33.255Z</updated>
   <id>http://qz1024.github.io/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="http://qz1024.github.io/2021/04/22/sz/"/>
     <id>http://qz1024.github.io/2021/04/22/sz/</id>
     <published>2021-04-22T12:44:23.000Z</published>
-    <updated>2021-04-22T14:28:08.522Z</updated>
+    <updated>2021-04-23T01:26:33.255Z</updated>
     
     
     <summary type="html">&lt;hr&gt;
-&lt;h2 id=&quot;一、-图像卷积&quot;&gt;&lt;a href=&quot;#一、-图像卷积&quot; class=&quot;headerlink&quot; title=&quot;一、 图像卷积&quot;&gt;&lt;/a&gt;一、 图像卷积&lt;/h2&gt;&lt;p&gt;现在有一张图片 $f(x,y)$和一个kernel核w(a,b).&lt;/p&gt;
+&lt;h2 id=&quot;原文链接：戳这里！&quot;&gt;&lt;a href=&quot;#原文链接：戳这里！&quot; class=&quot;headerlink&quot; title=&quot;原文链接：戳这里！&quot;&gt;&lt;/a&gt;&lt;code&gt;原文链接&lt;/code&gt;：&lt;a href=&quot;https://zhuanlan.zhihu.com/p/67197912&quot;&gt;戳这里！&lt;/a&gt;&lt;/h2&gt;&lt;h2 id=&quot;一、-图像卷积&quot;&gt;&lt;a href=&quot;#一、-图像卷积&quot; class=&quot;headerlink&quot; title=&quot;一、 图像卷积&quot;&gt;&lt;/a&gt;一、 图像卷积&lt;/h2&gt;&lt;p&gt;现在有一张图片 $f(x,y)$和一个kernel核w(a,b).&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;卷积： 卷积运算就是对于图像$f(x,y)$中的每个像素，将其做为中心像素，计算它及其邻域像素和kernel核w(a,b)对应位置元素的乘积，然后把结果相加到一起，得到的值就做为该中心元素的新值，这样就完成了一起卷积运算。&lt;/p&gt;
 &lt;/blockquote&gt;
